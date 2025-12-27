@@ -112,19 +112,10 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 }}
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-accent shadow-neu-lg flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-2xl">C</span>
+                <div className="w-16 h-16 rounded-2xl shadow-neu-lg overflow-hidden bg-card flex items-center justify-center">
+                  <img src="/logo.png" alt="The Consistent Academy" className="w-full h-full object-cover" />
                 </div>
               </motion.div>
-
-              <motion.span
-                className="inline-block px-5 py-2.5 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 text-primary text-sm font-medium mb-8 border border-primary/20"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                Welcome to Excellence
-              </motion.span>
 
               <motion.h1
                 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
@@ -345,7 +336,7 @@ const Index = () => {
                 </AnimatedText>
                 <AnimatedHeading delay={0.1} className="mb-6">
                   <span className="text-foreground">Vidya </span>
-                  <span className="text-gradient">Wankhade</span>
+                  <span className="text-gradient">Wankhede</span>
                 </AnimatedHeading>
                 <AnimatedText className="text-muted-foreground text-lg mb-6" delay={0.2}>
                   With over a decade of experience in English education, Vidya founded The Consistent Academy 
@@ -360,7 +351,7 @@ const Index = () => {
                       <p className="text-foreground italic mb-2">
                         "Consistency is the bridge between goals and accomplishment."
                       </p>
-                      <p className="text-sm text-muted-foreground">— Vidya Wankhade</p>
+                      <p className="text-sm text-muted-foreground">— Vidya Wankhede</p>
                     </div>
                   </div>
                 </NeumorphicCard>
@@ -392,14 +383,13 @@ const Index = () => {
               >
                 <div className="relative aspect-square max-w-md mx-auto">
                   <FloatingBlob className="-top-10 -right-10" size="md" color="accent" />
-                  <div className="relative z-10 w-full h-full rounded-3xl shadow-neu-xl bg-gradient-to-br from-primary/30 via-primary/20 to-accent/20 flex items-center justify-center">
+                  {/* <div className="relative z-10 w-full h-full rounded-3xl shadow-neu-xl bg-gradient-to-br from-primary/30 via-primary/20 to-accent/20 flex items-center justify-center"> */}
                     <div className="text-center p-8">
-                      <div className="w-32 h-32 rounded-full bg-gradient-to-br from-card to-primary/10 shadow-neu mx-auto mb-4 flex items-center justify-center">
-                        <span className="text-4xl">👩‍🏫</span>
+                      <div className="w-full h-full rounded-full bg-gradient-to-br from-card to-primary/10 shadow-neu mx-auto mb-4 overflow-hidden">
+                        <img src="/vidya.png" alt="Vidya Wankhede" className="w-full h-full object-cover" />
                       </div>
-                      <p className="text-muted-foreground text-sm">Founder image placeholder</p>
                     </div>
-                  </div>
+                  {/* </div> */}
                 </div>
               </motion.div>
             </div>

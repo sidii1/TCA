@@ -118,11 +118,11 @@ export const Navbar = () => {
             <div className="flex items-center justify-between">
               <Link to="/" className="flex items-center gap-3">
                 <motion.div
-                  className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent shadow-neu flex items-center justify-center"
+                  className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent shadow-neu flex items-center justify-center overflow-hidden"
                   whileHover={{ rotate: 5, scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <span className="text-primary-foreground font-bold text-lg">C</span>
+                  <img src="/logo.png" alt="The Consistent Academy" className="w-full h-full object-cover" />
                 </motion.div>
                 <span className="font-bold text-xl text-foreground hidden sm:block">
                   The Consistent Academy

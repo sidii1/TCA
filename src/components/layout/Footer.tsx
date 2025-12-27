@@ -51,8 +51,8 @@ export const Footer = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent shadow-neu flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">C</span>
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent shadow-neu flex items-center justify-center overflow-hidden">
+                <img src="/logo.png" alt="The Consistent Academy" className="w-full h-full object-cover" />
               </div>
               <span className="font-bold text-lg text-foreground">
                 The Consistent Academy
