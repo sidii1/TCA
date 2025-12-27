@@ -318,84 +318,110 @@ const Index = () => {
         </div>
       </SectionWrapper>
 
-      {/* Founder Section */}
-      <section id="founder" className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-primary/5" />
-        
-        <SectionWrapper className="relative z-10">
-          <div className="container mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
-                <AnimatedText className="text-primary text-sm font-medium uppercase tracking-wider mb-4">
-                  Meet the Founder
-                </AnimatedText>
-                <AnimatedHeading delay={0.1} className="mb-6">
-                  <span className="text-foreground">Vidya </span>
-                  <span className="text-gradient">Wankhede</span>
-                </AnimatedHeading>
-                <AnimatedText className="text-muted-foreground text-lg mb-6" delay={0.2}>
-                  With over a decade of experience in English education, Vidya founded The Consistent Academy 
-                  with a mission to make quality English learning accessible to all. Her unique teaching 
-                  methodology focuses on building lasting language skills through consistent practice.
-                </AnimatedText>
-                
-                <NeumorphicCard className="p-6 bg-gradient-to-br from-primary/10 to-accent/5 mb-8" hover={false}>
-                  <div className="flex gap-4">
-                    <Quote className="w-8 h-8 text-primary flex-shrink-0" />
-                    <div>
-                      <p className="text-foreground italic mb-2">
-                        "Consistency is the bridge between goals and accomplishment."
-                      </p>
-                      <p className="text-sm text-muted-foreground">— Vidya Wankhede</p>
-                    </div>
-                  </div>
-                </NeumorphicCard>
+     {/* Founder Section */}
+<section id="founder" className="relative overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-background to-primary/5" />
 
-                {/* Milestones */}
-                <div className="grid grid-cols-2 gap-4">
-                  {milestones.slice(0, 2).map((milestone, index) => (
-                    <motion.div
-                      key={index}
-                      className="p-4 rounded-xl bg-gradient-to-br from-primary/10 to-card shadow-neu-sm"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 + index * 0.1 }}
-                    >
-                      <span className="text-primary font-bold text-lg">{milestone.year}</span>
-                      <p className="text-sm text-foreground font-medium mt-1">{milestone.title}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+  <SectionWrapper className="relative z-10">
+    <div className="container mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
+        {/* Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <AnimatedText className="text-primary text-sm font-medium uppercase tracking-wider mb-4">
+            Meet the Founder
+          </AnimatedText>
+
+          <AnimatedHeading delay={0.1} className="mb-6">
+            <span className="text-foreground">Vidya </span>
+            <span className="text-gradient">Wankhade</span>
+          </AnimatedHeading>
+
+          <AnimatedText className="text-muted-foreground text-lg mb-6" delay={0.2}>
+            Founder & Lead Instructor at The Consistent Academy with over{" "}
+            <strong>17 years of experience</strong> in English education.
+            She holds <strong>B.Sc, B.Ed, and MPM</strong> qualifications,
+            is <strong>UGC NET qualified</strong>, and is a
+            <strong> British Council Certified IELTS Trainer</strong>.
+          </AnimatedText>
+
+          <AnimatedText className="text-muted-foreground text-lg mb-6" delay={0.3}>
+            Vidya is also certified in <strong>TOEFL, PET, TESOL & TEFL</strong>,
+            and is the author of <em>“Cakewalk IELTS”</em>, a practical guide that
+            simplifies IELTS preparation for learners worldwide.
+          </AnimatedText>
+
+          <NeumorphicCard className="p-6 bg-gradient-to-br from-primary/10 to-accent/5 mb-8" hover={false}>
+            <div className="flex gap-4">
+              <Quote className="w-8 h-8 text-primary flex-shrink-0" />
+              <div>
+                <p className="text-foreground italic mb-2">
+                  "Learning should be effortless, joyful, and deeply meaningful.
+                  With the right guidance and consistency, English becomes a life skill."
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  — Vidya Wankhade
+                </p>
+              </div>
+            </div>
+          </NeumorphicCard>
+
+          {/* Mini Milestones */}
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { year: "2008", title: "Teaching Career Began" },
+              { year: "2016", title: "IELTS Certified Trainer" }
+              
+            ].map((milestone, index) => (
               <motion.div
-                className="relative"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                key={index}
+                className="p-4 rounded-xl bg-gradient-to-br from-primary/10 to-card shadow-neu-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
+                transition={{ delay: 0.4 + index * 0.1 }}
               >
-                <div className="relative aspect-square max-w-md mx-auto">
-                  <FloatingBlob className="-top-10 -right-10" size="md" color="accent" />
-                  {/* <div className="relative z-10 w-full h-full rounded-3xl shadow-neu-xl bg-gradient-to-br from-primary/30 via-primary/20 to-accent/20 flex items-center justify-center"> */}
-                    <div className="text-center p-8">
-                      <div className="w-full h-full rounded-full bg-gradient-to-br from-card to-primary/10 shadow-neu mx-auto mb-4 overflow-hidden">
-                        <img src="/vidya.png" alt="Vidya Wankhede" className="w-full h-full object-cover" />
-                      </div>
-                    </div>
-                  {/* </div> */}
-                </div>
+                <span className="text-primary font-bold text-lg">{milestone.year}</span>
+                <p className="text-sm text-foreground font-medium mt-1">
+                  {milestone.title}
+                </p>
               </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Image */}
+        <motion.div
+          className="relative"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="relative aspect-square max-w-md mx-auto">
+            <FloatingBlob className="-top-10 -right-10" size="md" color="accent" />
+            <div className="text-center p-8">
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-card to-primary/10 shadow-neu mx-auto mb-4 overflow-hidden">
+                <img
+                  src="/vidya.png"
+                  alt="Vidya Wankhade"
+                  className="w-full h-full object-cover"
+                />
+              </div>
             </div>
           </div>
-        </SectionWrapper>
-      </section>
+        </motion.div>
+
+      </div>
+    </div>
+  </SectionWrapper>
+</section>
+
 
       {/* Testimonials Section */}
       <section id="testimonials" className="relative overflow-hidden">
