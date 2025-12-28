@@ -44,7 +44,7 @@ const Index = () => {
         <FloatingBlob className="top-40 right-0 animate-float-slow" size="lg" color="accent" delay={0.5} />
         <FloatingBlob className="bottom-20 left/3 animate-float" size="md" color="mixed" delay={1} />
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto py-8 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -121,22 +121,6 @@ const Index = () => {
             </motion.div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, repeat: Infinity, repeatType: "reverse", duration: 1.5 }}
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-primary/40 flex justify-center pt-2">
-            <motion.div
-              className="w-1.5 h-1.5 rounded-full bg-primary"
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
-          </div>
-        </motion.div>
       </section>
 
       {/* Founder Section */}

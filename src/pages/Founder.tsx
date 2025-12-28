@@ -94,7 +94,7 @@ const Founder = () => {
               </NeumorphicCard>
 
               {/* Milestones */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-4 gap-8">
                 {milestones.map((milestone, index) => (
                   <motion.div
                     key={milestone.year}
