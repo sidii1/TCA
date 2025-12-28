@@ -131,7 +131,7 @@ const Testimonials = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { value: "500+", label: "Happy Students" },
+              { value: "1500+", label: "Happy Students" },
               { value: "4.9", label: "Average Rating" },
               { value: "95%", label: "Success Rate" },
               { value: "50+", label: "5-Star Reviews" },
