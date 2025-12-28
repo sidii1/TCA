@@ -12,7 +12,7 @@ export const SectionWrapper = ({ children, className, id }: SectionWrapperProps)
   return (
     <motion.section
       id={id}
-      className={cn("py-20 md:py-32 px-4 md:px-8 relative overflow-hidden", className)}
+      className={cn("md:py-16 px-4 md:px-8 relative overflow-hidden", className)}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
