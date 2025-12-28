@@ -6,16 +6,16 @@ import { FloatingBlob } from "@/components/ui/floating-blob";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 
 const expertise = [
-  "IELTS Speaking & Writing",
-  "Interview Preparation",
-  "Corporate & Business English",
-  "Personality Development",
-  "Soft Skills Training",
-  "Professional Communication"
+  // "IELTS Speaking & Writing",
+  // "Interview Preparation",
+  // "Corporate & Business English",
+  // "Personality Development",
+  // "Soft Skills Training",
+  // "Professional Communication"
 ];
 
 const milestones = [
-  { year: "2007", title: "Began Teaching Career" },
+
   { year: "2016", title: "IELTS Master Trainer Certification" },
   { year: "2024", title: "Head of Department (Academics)" },
   { year: "2025", title: "Founded The Consistent Academy" }
@@ -47,19 +47,38 @@ const Founder = () => {
               </AnimatedHeading>
 
               <AnimatedText className="text-muted-foreground text-lg mb-6" delay={0.2}>
-                Author, IELTS & Interview Coach, and Founder of{" "}
-                <strong>The Consistent Academy</strong>. With over{" "}
-                <strong>18 years of experience</strong>, Vidya has helped
-                students, professionals, and aspiring leaders communicate
-                with clarity, confidence, and impact.
-              </AnimatedText>
+  Author, IELTS full course(speaking+reading+writing) & Interview Coach, and Founder of{" "}
+  <strong>The Consistent Academy</strong>. With over{" "}
+  <strong>19 years of experience</strong>, Vidya has helped students,
+  professionals, and aspiring leaders communicate with clarity,
+  confidence, and impact.
+</AnimatedText>
 
-              <AnimatedText className="text-muted-foreground text-lg mb-8" delay={0.3}>
-                A <strong>British Council Certified IELTS Master Trainer</strong>{" "}
-                and Corporate Communication Coach, she blends language mastery
-                with real-world communication strategies — helping learners
-                stand out, not just speak up.
-              </AnimatedText>
+<AnimatedText className="text-muted-foreground text-lg mb-6" delay={0.3}>
+  A <strong>British Council Certified IELTS Master Trainer</strong>,{" "}
+  <strong>Certified Soft Skills & Corporate Trainer</strong>, and{" "}
+  <strong>Train-the-Trainer professional</strong>, she blends language mastery
+  with real-world communication strategies — helping learners stand out,
+  not just speak up.
+</AnimatedText>
+
+<AnimatedText className="text-muted-foreground text-lg mb-6" delay={0.4}>
+  Vidya Wankhade holds <strong>B.Sc, B.Ed, and MPM</strong> qualifications and is{" "}
+  <strong>UGC NET qualified</strong>. She is also certified as a{" "}
+  <strong>TOEFL Trainer, PET Trainer</strong>, and is{" "}
+  <strong>TESOL/TEFL certified</strong>, bringing global standards into
+  every classroom she leads.
+</AnimatedText>
+
+<AnimatedText className="text-muted-foreground text-lg mb-6" delay={0.5}>
+  She is the author of <strong>three books</strong>, including the
+  widely appreciated <em>“Cakewalk IELTS”</em>,{" "}
+  <em>“Reading Detective – Solving Comprehension Mysteries for Kids”</em>, and{" "}
+  <em>“101 Management Books You’ll Never Read But Should”</em>.
+</AnimatedText>
+
+
+
 
               {/* Expertise */}
               <div className="grid grid-cols-2 gap-3 mb-8">
