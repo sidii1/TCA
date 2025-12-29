@@ -47,12 +47,12 @@ const values = [
 ];
 
 const images = [
-  "/vidya.png",
+  "/v6.png",
   "/v1.png",
-  "/classroom.png",
-  "/workshop.png",
-  "/session.png",
-  "/students.png",
+  "/v2.png",
+  "/v3.png",
+  "/v4.png",
+  "/v5.png",
 ];
 
 /* ---------------- PHOTO SLIDESHOW ---------------- */
@@ -64,66 +64,123 @@ const PhotoSlideshow = () => {
     const timer = setInterval(() => {
       setActive((prev) => (prev + 1) % images.length);
     }, 3500);
+
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="flex items-center justify-center gap-6 overflow-hidden">
-      {images.map((src, index) => {
-        const isActive = index === active;
-        return (
-          <motion.div
-            key={index}
-            onClick={() => setActive(index)}
-            animate={{ scale: isActive ? 1.15 : 0.85, opacity: isActive ? 1 : 0.5 }}
-            transition={{ duration: 0.6 }}
-            className={`rounded-3xl overflow-hidden cursor-pointer shadow-neu-xl ${isActive ? "z-10" : ""}`}
-            style={{ width: isActive ? 360 : 260, height: 420 }}
-          >
-            <img src={src} className="w-full h-full object-cover" />
-          </motion.div>
-        );
-      })}
+    <div className="relative w-full overflow-visible py-24 min-h-[620px]">
+      {/* extra top padding prevents clipping */}
+      <div className="relative flex justify-center items-center h-full">
+        {images.map((src, index) => {
+          const offset = index - active;
+
+          return (
+            <motion.div
+              key={index}
+              onClick={() => setActive(index)}
+              animate={{
+                x: offset * 380,
+                scale: offset === 0 ? 1.18 : 0.9,
+                opacity: offset === 0 ? 1 : 0.45,
+              }}
+              transition={{
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
+              className="absolute cursor-pointer"
+            >
+              <div className="w-[380px] h-[480px] rounded-3xl overflow-hidden shadow-neu-xl">
+                <img
+                  src={src}
+                  alt="Academy moments"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
     </div>
   );
 };
+
+
 
 /* ---------------- COURSES SLIDESHOW ---------------- */
 
 const CoursesSlideshow = () => {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
+    if (paused) return;
+
     const timer = setInterval(() => {
       setActive((prev) => (prev + 1) % courses.length);
-    }, 3000);
+    }, 3500);
+
     return () => clearInterval(timer);
-  }, []);
+  }, [paused]);
 
   return (
-    <div className="flex justify-center items-center gap-6 overflow-hidden">
-      {courses.map((course, index) => {
-        const isActive = index === active;
+    <div
+      className="relative w-full overflow-visible py-24 min-h-[560px]"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div className="relative flex justify-center items-center h-full">
+        {courses.map((course, index) => {
+          // circular distance
+          let offset = index - active;
+          const half = Math.floor(courses.length / 2);
 
-        return (
-          <motion.div
-            key={index}
-            onClick={() => setActive(index)}
-            animate={{ scale: isActive ? 1.1 : 0.9, opacity: isActive ? 1 : 0.5 }}
-            transition={{ duration: 0.5 }}
-            className={`cursor-pointer ${isActive ? "z-10" : ""}`}
-          >
-            <NeumorphicCard className="w-[300px] text-center p-6">
-              <div className="text-4xl mb-4">{course.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{course.title}</h3>
-              <p className="text-muted-foreground text-sm">{course.description}</p>
-            </NeumorphicCard>
-          </motion.div>
-        );
-      })}
+          if (offset > half) offset -= courses.length;
+          if (offset < -half) offset += courses.length;
+
+          // hide far slides
+          if (Math.abs(offset) > 2) return null;
+
+          return (
+            <motion.div
+              key={index}
+              onClick={() => setActive(index)}
+              animate={{
+                x: offset * 380,
+                scale: offset === 0 ? 1.15 : 0.9,
+                opacity: offset === 0 ? 1 : 0.45,
+                y: offset === 0 ? -12 : 0,
+              }}
+              transition={{
+                duration: 0.8,
+                ease: [0.4, 0, 0.2, 1],
+              }}
+              style={{
+                zIndex: 10 - Math.abs(offset),
+              }}
+              className="absolute cursor-pointer"
+            >
+              <NeumorphicCard className="w-[360px] h-[460px] text-center p-10 flex flex-col justify-center shadow-neu-xl">
+                <div className="text-6xl mb-6">{course.icon}</div>
+
+                <h3 className="text-2xl font-semibold mb-4">
+                  {course.title}
+                </h3>
+
+                <p className="text-muted-foreground text-base leading-relaxed">
+                  {course.description}
+                </p>
+              </NeumorphicCard>
+            </motion.div>
+          );
+        })}
+      </div>
     </div>
   );
 };
+
+
+
 
 /* ---------------- PAGE ---------------- */
 
