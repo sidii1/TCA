@@ -133,80 +133,77 @@ const Testimonials = () => {
           </div>
 
           {/* SLIDER */}
-          <div className="max-w-4xl mx-auto">
-            <div className="relative min-h-[420px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={current}
-                  initial={{ opacity: 0, x: 80 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -80 }}
-                  transition={{ duration: 0.45, ease: "easeInOut" }}
-                  className="absolute inset-0"
-                >
-                  <div className="rounded-3xl bg-gradient-to-br from-primary/10 via-card to-accent/10 p-8 shadow-neu h-full flex flex-col justify-between">
+         <div className="max-w-4xl mx-auto">
+  <div className="relative min-h-[320px]">
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={current}
+        initial={{ opacity: 0, x: 80 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -80 }}
+        transition={{ duration: 0.45, ease: "easeInOut" }}
+        className="absolute inset-0"
+      >
+        <div className="rounded-3xl bg-gradient-to-br from-primary/10 via-card to-accent/10 p-6 shadow-neu flex flex-col gap-4">
 
-                    <div>
-                      <Quote className="w-10 h-10 text-primary/30 mb-4" />
-                      <p className="text-lg leading-relaxed mb-6">
-                        “{testimonials[current].text}”
-                      </p>
+          <div>
+            <Quote className="w-8 h-8 text-primary/30 mb-3" />
+            <p className="text-base leading-relaxed mb-4">
+              “{testimonials[current].text}”
+            </p>
 
-                      <div className="flex gap-1 mb-4">
-                        {Array.from({ length: testimonials[current].rating }).map((_, i) => (
-                          <Star
-                            key={i}
-                            size={18}
-                            className="text-yellow-500 fill-yellow-500"
-                          />
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="font-bold">{testimonials[current].name}</p>
-                      <p className="text-sm text-muted-foreground">
-                        {testimonials[current].role}
-                      </p>
-                      <p className="text-sm text-primary">
-                        {testimonials[current].course}
-                      </p>
-                    </div>
-
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* CONTROLS */}
-            <div className="flex justify-center items-center gap-4 mt-8">
-              <NeumorphicButton variant="secondary" onClick={prev}>
-                <ChevronLeft />
-              </NeumorphicButton>
-
-              <div className="flex gap-2">
-                {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => {
-                      stopAutoSlide();
-                      setCurrent(i);
-                    }}
-                    className={`h-2 rounded-full transition-all ${
-                      i === current
-                        ? "w-8 bg-primary"
-                        : "w-2 bg-primary/30"
-                    }`}
-                  />
-                ))}
-              </div>
-
-              <NeumorphicButton variant="secondary" onClick={next}>
-                <ChevronRight />
-              </NeumorphicButton>
+            <div className="flex gap-1 mb-3">
+              {Array.from({ length: testimonials[current].rating }).map((_, i) => (
+                <Star
+                  key={i}
+                  size={16}
+                  className="text-yellow-500 fill-yellow-500"
+                />
+              ))}
             </div>
           </div>
 
+          <div>
+            <p className="font-bold">{testimonials[current].name}</p>
+            <p className="text-sm text-muted-foreground">
+              {testimonials[current].role}
+            </p>
+            <p className="text-sm text-primary">
+              {testimonials[current].course}
+            </p>
+          </div>
+
+        </div>
+      </motion.div>
+    </AnimatePresence>
+  </div>
+
+  {/* CONTROLS */}
+  <div className="flex justify-center items-center gap-4 mt-6">
+    <NeumorphicButton variant="secondary" onClick={prev}>
+      <ChevronLeft />
+    </NeumorphicButton>
+
+    <div className="flex gap-2">
+      {testimonials.map((_, i) => (
+        <button
+          key={i}
+          onClick={() => {
+            stopAutoSlide();
+            setCurrent(i);
+          }}
+          className={`h-2 rounded-full transition-all ${
+            i === current ? "w-8 bg-primary" : "w-2 bg-primary/30"
+          }`}
+        />
+      ))}
+    </div>
+
+    <NeumorphicButton variant="secondary" onClick={next}>
+      <ChevronRight />
+    </NeumorphicButton>
+  </div>
+</div>
         </div>
       </SectionWrapper>
     </section>
