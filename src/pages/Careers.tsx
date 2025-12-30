@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { ArrowRight, Mail, User, Briefcase } from "lucide-react";
-
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
@@ -30,27 +30,44 @@ const Careers = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
-    alert(
-      "Thank you for your interest!\n\nPlease email your details to:\n📧 theconsistentacademy@gmail.com\n\nWe will contact you shortly."
-    );
+    try {
+      await addDoc(collection(db, "careerApplications"), {
+        ...form,
+        createdAt: serverTimestamp(),
+      });
 
-    setForm({
-      name: "",
-      email: "",
-      role: "",
-      experience: "",
-      message: "",
-    });
+      alert(
+        "✅ Application submitted successfully!\n\nOur team will review your profile and contact you soon.\n\n📧 theconsistentacademy@gmail.com"
+      );
+
+      setForm({
+        name: "",
+        email: "",
+        role: "",
+        experience: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Career form error:", error);
+      alert("❌ Something went wrong. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -69,8 +86,8 @@ const Careers = () => {
           </AnimatedHeading>
 
           <AnimatedText className="text-muted-foreground text-lg mt-6">
-            We’re always looking for passionate educators and mentors who
-            believe in consistent growth and meaningful learning.
+            We’re always looking for passionate educators and mentors who believe
+            in consistent growth and meaningful learning.
           </AnimatedText>
         </div>
       </SectionWrapper>
@@ -103,8 +120,8 @@ const Careers = () => {
             <div className="text-center mb-8">
               <AnimatedHeading>Apply Now</AnimatedHeading>
               <AnimatedText className="text-muted-foreground mt-3">
-                Fill in your details below. For now, submissions will be sent
-                directly to our academy email.
+                Your application will be securely stored and reviewed by our
+                team.
               </AnimatedText>
 
               <p className="mt-4 text-sm text-primary flex justify-center items-center gap-2">
@@ -128,7 +145,6 @@ const Careers = () => {
                     value={form.name}
                     onChange={handleChange}
                     className="w-full pl-10 pr-4 py-3 rounded-xl bg-background shadow-neu-sm focus:outline-none"
-                    placeholder="Your full name"
                   />
                 </div>
               </div>
@@ -147,7 +163,6 @@ const Careers = () => {
                     value={form.email}
                     onChange={handleChange}
                     className="w-full pl-10 pr-4 py-3 rounded-xl bg-background shadow-neu-sm focus:outline-none"
-                    placeholder="your@email.com"
                   />
                 </div>
               </div>
@@ -184,7 +199,6 @@ const Careers = () => {
                   value={form.experience}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl bg-background shadow-neu-sm focus:outline-none"
-                  placeholder="e.g. 3 years"
                 />
               </div>
 
@@ -199,14 +213,14 @@ const Careers = () => {
                   value={form.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl bg-background shadow-neu-sm focus:outline-none"
-                  placeholder="Tell us about yourself and why you'd like to join"
                 />
               </div>
 
               {/* Submit */}
               <div className="pt-4 text-center">
-                <NeumorphicButton type="submit" size="lg">
-                  Submit Application <ArrowRight size={18} />
+                <NeumorphicButton type="submit" size="lg" disabled={loading}>
+                  {loading ? "Submitting..." : "Submit Application"}
+                  <ArrowRight size={18} />
                 </NeumorphicButton>
               </div>
             </form>
