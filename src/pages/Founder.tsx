@@ -9,9 +9,9 @@ const milestones = [
 
   { year: "2016", title: "IELTS Master Trainer Certification" },
   { year: "2019", title: "TEFL & TESOL Trainer" },
-  { year: "2022", title: "Published Cakewalk IELTS" },
-  { year: "2024", title: "Head of Department (Academics) Published Reading Detectives" },
-  { year: "2025", title: "Founded The Consistent Academy Published 101 Management Books You’ll Never Read But Should" },
+  { year: "2022", title: "Published 'Cakewalk IELTS'" },
+  { year: "2024", title: "Head of Department (Academics)", subtitle:"Published 'Reading Detectives'" },
+  { year: "2025", title: "Founded The Consistent Academy", subtitle:"Published '101 Management Books You’ll Never Read But Should'" },
 ];
 
 const Founder = () => {
@@ -86,6 +86,11 @@ const Founder = () => {
                     </span>
                     <p className="text-sm text-foreground font-medium mt-1">
                       {milestone.title}
+                      {milestone.subtitle && (
+                        <span className="text-sm text-foreground font-medium mt-1 block">
+                          {milestone.subtitle}
+                        </span>
+                      )}
                     </p>
                   </motion.div>
                 ))}
