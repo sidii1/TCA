@@ -122,18 +122,8 @@ const Index = () => {
 
       <Founder />
 
-      {/* ABOUT */}
-      <SectionWrapper>
-        <div className="text-center mb-14">
-          <AnimatedText className="text-primary text-sm uppercase">About Us</AnimatedText>
-          <AnimatedHeading>
-            Building <span className="text-gradient">Confident Speakers</span>
-          </AnimatedHeading>
-        </div>
-      </SectionWrapper>
-
       {/* COURSES */}
-      <SectionWrapper>
+      <SectionWrapper id="courses">
         <div className="text-center mb-10">
           <AnimatedText className="text-primary text-sm uppercase">Courses</AnimatedText>
           <AnimatedHeading>

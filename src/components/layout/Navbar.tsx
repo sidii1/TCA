@@ -14,7 +14,7 @@ type NavItem = {
 const navLinks: NavItem[] = [
   { name: "Home", sectionId: "home" },
   { name: "Founder", sectionId: "founder" },
-  { name: "Courses", path: "/courses" },
+  { name: "Courses", sectionId: "courses" },
   { name: "Careers", path: "/careers" },
   { name: "Testimonials", sectionId: "testimonials" },
   { name: "Contact", path: "/contact" },
@@ -33,7 +33,7 @@ export const Navbar = () => {
 
       // Update active section based on scroll position (only on home page)
       if (location.pathname === "/") {
-        const sections = ["home", "founder", "testimonials"];
+        const sections = ["home", "founder", "courses", "testimonials"];
         for (const sectionId of sections.reverse()) {
           const element = document.getElementById(sectionId);
           if (element) {
