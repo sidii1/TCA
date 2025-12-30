@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, Mail, User, Briefcase } from "lucide-react";
+import { ArrowRight, Mail, User, Briefcase, Phone } from "lucide-react";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { Navbar } from "@/components/layout/Navbar";
@@ -8,12 +8,14 @@ import { SectionWrapper } from "@/components/ui/section-wrapper";
 import { NeumorphicButton } from "@/components/ui/neumorphic-button";
 import { NeumorphicCard } from "@/components/ui/neumorphic-card";
 import { AnimatedHeading, AnimatedText } from "@/components/ui/animated-text";
+import { number } from "framer-motion";
 
 /* ---------------- TYPES ---------------- */
 
 type CareerFormData = {
   name: string;
   email: string;
+  contact: string;
   role: string;
   experience: string;
   message: string;
@@ -25,6 +27,7 @@ const Careers = () => {
   const [form, setForm] = useState<CareerFormData>({
     name: "",
     email: "",
+    contact: "",
     role: "",
     experience: "",
     message: "",
@@ -58,6 +61,7 @@ const Careers = () => {
       setForm({
         name: "",
         email: "",
+        contact: "",
         role: "",
         experience: "",
         message: "",
@@ -161,6 +165,24 @@ const Careers = () => {
                     name="email"
                     required
                     value={form.email}
+                    onChange={handleChange}
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-background shadow-neu-sm focus:outline-none"
+                  />
+                </div>
+              </div>
+
+              {/* Contact No */}
+              <div>
+                <label className="block text-sm font-medium mb-1">
+                  Contact Number
+                </label>
+                <div className="relative">
+                  <Phone className="absolute left-3 top-3 text-muted-foreground" size={18} />
+                  <input
+                    type="number"
+                    name="contact"
+                    required
+                    value={form.contact}
                     onChange={handleChange}
                     className="w-full pl-10 pr-4 py-3 rounded-xl bg-background shadow-neu-sm focus:outline-none"
                   />
