@@ -141,11 +141,11 @@ const Index = () => {
           </AnimatedHeading>
         </div>
 
-        <div className="relative h-[70vh] w-full overflow-hidden rounded-3xl shadow-neu-xl">
+        <div className="relative h-[60vh] sm:h-[70vh] w-full overflow-hidden rounded-3xl shadow-neu-xl">
           <FlowingMenu
             items={courseMenuItems}
             speed={18}
-            textColor="#250060ff"
+            textColor="#250060e7"
             bgColor="hsl(var(--card))"
             marqueeBgColor="#060010"
             marqueeTextColor="#ffffff"

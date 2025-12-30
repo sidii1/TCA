@@ -109,7 +109,7 @@ const Testimonials = () => {
 
           {/* Featured Testimonial Carousel */}
           <div className="max-w-4xl mx-auto mb-16">
-            <div className="relative h-[480px] md:h-[400px] flex flex-col">
+            <div className="relative min-h-[500px] sm:min-h-[450px] md:h-[400px] flex flex-col">
               <div className="flex-1 relative">
                 <AnimatePresence mode="wait">
                   <motion.div
@@ -120,27 +120,27 @@ const Testimonials = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="absolute inset-0"
                   >
-                    <div className="rounded-3xl bg-card p-8 md:p-8 shadow-neu bg-gradient-to-br from-primary/10 via-card to-accent/5 h-full">
-                      <div className="flex flex-col md:flex-row gap-8 items-start h-full">
-                        <div className="flex-shrink-0">
-                          <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center text-4xl shadow-neu">
+                    <div className="rounded-3xl bg-card p-4 sm:p-6 md:p-8 shadow-neu bg-gradient-to-br from-primary/10 via-card to-accent/5 h-full">
+                      <div className="flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8 items-start h-full">
+                        <div className="flex-shrink-0 mx-auto md:mx-0">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-primary/30 to-accent/30 flex items-center justify-center text-3xl sm:text-4xl shadow-neu">
                             🎓
                           </div>
                         </div>
-                        <div className="flex-1">
-                          <Quote className="w-10 h-10 text-primary/30 mb-4" />
-                          <p className="text-lg text-foreground leading-relaxed mb-6">
+                        <div className="flex-1 min-w-0">
+                          <Quote className="w-8 h-8 sm:w-10 sm:h-10 text-primary/30 mb-3 sm:mb-4" />
+                          <p className="text-base sm:text-lg text-foreground leading-relaxed mb-4 sm:mb-6">
                             "{testimonials[currentTestimonial].text}"
                           </p>
-                          <div className="flex gap-1 mb-4">
+                          <div className="flex gap-1 mb-3 sm:mb-4">
                             {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                              <Star key={i} size={18} className="text-yellow-500 fill-yellow-500" />
+                              <Star key={i} size={16} className="sm:w-[18px] sm:h-[18px] text-yellow-500 fill-yellow-500" />
                             ))}
                           </div>
                           <div>
-                            <p className="font-bold text-foreground">{testimonials[currentTestimonial].name}</p>
-                            <p className="text-sm text-muted-foreground">{testimonials[currentTestimonial].role}</p>
-                            <p className="text-sm text-primary mt-1">{testimonials[currentTestimonial].course}</p>
+                            <p className="font-bold text-foreground text-sm sm:text-base">{testimonials[currentTestimonial].name}</p>
+                            <p className="text-xs sm:text-sm text-muted-foreground">{testimonials[currentTestimonial].role}</p>
+                            <p className="text-xs sm:text-sm text-primary mt-1">{testimonials[currentTestimonial].course}</p>
                           </div>
                         </div>
                       </div>
@@ -150,32 +150,32 @@ const Testimonials = () => {
               </div>
 
               {/* Arrow Navigation */}
-              <div className="flex justify-center gap-4 mt-8 flex-shrink-0">
-                <NeumorphicButton variant="secondary" onClick={prevTestimonial} className="p-3">
-                  <ChevronLeft size={20} />
+              <div className="flex justify-center gap-3 sm:gap-4 mt-6 sm:mt-8 flex-shrink-0">
+                <NeumorphicButton variant="secondary" onClick={prevTestimonial} className="p-2 sm:p-3">
+                  <ChevronLeft size={18} className="sm:w-5 sm:h-5" />
                 </NeumorphicButton>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5 sm:gap-2">
                   {testimonials.map((_, index) => (
                     <button
                       key={index}
                       onClick={() => setCurrentTestimonial(index)}
-                      className={`w-2 h-2 rounded-full transition-all ${
+                      className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all ${
                         index === currentTestimonial 
-                          ? "w-8 bg-primary" 
+                          ? "w-6 sm:w-8 bg-primary" 
                           : "bg-primary/30 hover:bg-primary/50"
                       }`}
                     />
                   ))}
                 </div>
-                <NeumorphicButton variant="secondary" onClick={nextTestimonial} className="p-3">
-                  <ChevronRight size={20} />
+                <NeumorphicButton variant="secondary" onClick={nextTestimonial} className="p-2 sm:p-3">
+                  <ChevronRight size={18} className="sm:w-5 sm:h-5" />
                 </NeumorphicButton>
               </div>
             </div>
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
             {[
               { value: "1500+", label: "Happy Students" },
               { value: "4.9", label: "Average Rating" },
@@ -184,14 +184,14 @@ const Testimonials = () => {
             ].map((stat, index) => (
               <motion.div
                 key={index}
-                className="text-center p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-card shadow-neu"
+                className="text-center p-4 sm:p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-card shadow-neu"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * index }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">{stat.value}</div>
-                <div className="text-muted-foreground text-sm">{stat.label}</div>
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-gradient mb-1 sm:mb-2">{stat.value}</div>
+                <div className="text-muted-foreground text-xs sm:text-sm">{stat.label}</div>
               </motion.div>
             ))}
           </div>
