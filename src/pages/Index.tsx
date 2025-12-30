@@ -146,26 +146,24 @@ const Index = () => {
 
 
       {/* PHOTOS */}
-{/* PHOTOS */}
-<SectionWrapper>
-  <div className="text-center mb-6">
-    <AnimatedHeading>
-      Learning in <span className="text-gradient">Action</span>
-    </AnimatedHeading>
-  </div>
+      <SectionWrapper>
+        <div className="text-center mb-6">
+          <AnimatedHeading>
+            Learning in <span className="text-gradient">Action</span>
+          </AnimatedHeading>
+        </div>
 
-  <div className="relative h-[620px] w-full overflow-hidden">
-    <CircularGallery
-      items={galleryItems}
-      bend={3}
-      textColor="#ffffff"
-      borderRadius={0.06}
-      scrollSpeed={2}
-      scrollEase={0.08}
-    />
-  </div>
-</SectionWrapper>
-
+        <div className="relative h-[620px] w-full overflow-hidden">
+          <CircularGallery
+            items={galleryItems}
+            bend={3}
+            textColor="#ffffff"
+            borderRadius={0.06}
+            scrollSpeed={2}
+            scrollEase={0.08}
+          />
+        </div>
+      </SectionWrapper>
 
       <Testimonials />
 

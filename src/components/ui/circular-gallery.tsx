@@ -438,6 +438,8 @@ class App {
   isDown: boolean = false;
   start: number = 0;
   hasMoved: boolean = false;
+  autoScrollSpeed: number = 0.015;
+  lastInteractionTime: number = 0;
 
   constructor(
     container: HTMLElement,
@@ -464,6 +466,7 @@ class App {
     this.createMedias(items, bend, textColor, borderRadius, font);
     this.update();
     this.addEventListeners();
+    this.startAutoScroll();
   }
 
   createRenderer() {
@@ -586,6 +589,7 @@ class App {
     this.hasMoved = false;
     this.scroll.position = this.scroll.current;
     this.start = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    this.lastInteractionTime = Date.now();
     
     // Add move listeners when mouse is down
     const canvas = this.gl.canvas as HTMLCanvasElement;
@@ -603,6 +607,7 @@ class App {
     }
     
     this.scroll.target = (this.scroll.position ?? 0) + distance;
+    this.lastInteractionTime = Date.now();
   }
 
   onTouchUp() {
@@ -650,6 +655,12 @@ class App {
     // Allow normal page scrolling - don't interfere with it
     // Gallery only responds to drag, not wheel
   }
+
+  startAutoScroll() {
+    // Initialize auto-scroll - the actual scrolling happens in update()
+    this.lastInteractionTime = 0;
+  }
+
   onCheck() {
     if (!this.medias || !this.medias[0]) return;
     const width = this.medias[0].width;
@@ -677,6 +688,12 @@ class App {
   }
 
   update() {
+    // Auto-scroll when not interacting
+    const timeSinceInteraction = Date.now() - this.lastInteractionTime;
+    if (!this.isDown && timeSinceInteraction > 1000) {
+      this.scroll.target += this.autoScrollSpeed;
+    }
+    
     this.scroll.current = lerp(this.scroll.current, this.scroll.target, this.scroll.ease);
     const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
     if (this.medias) {
