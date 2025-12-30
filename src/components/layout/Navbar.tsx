@@ -109,18 +109,19 @@ export const Navbar = () => {
         <div className="container mx-auto px-4">
           <motion.nav
             className={cn(
-              "rounded-2xl px-6 py-4 transition-all duration-500",
+              "rounded-3xl px-6 py-4 transition-all duration-500",
               isScrolled
-                ? "glass shadow-neu bg-gradient-to-r from-card/90 via-primary/5 to-card/90"
+                ? "glass-strong shadow-neu-lg"
                 : "bg-transparent"
             )}
           >
             <div className="flex items-center justify-between">
               <Link to="/" className="flex items-center gap-3">
                 <motion.div
-                  className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent shadow-neu flex items-center justify-center overflow-hidden"
-                  whileHover={{ rotate: 5, scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
+                  className="w-10 h-10 rounded-2xl bg-gradient-to-br from-primary to-accent shadow-neu-lg flex items-center justify-center overflow-hidden"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
                   <img src="/logo.png" alt="The Consistent Academy" className="w-full h-full object-cover" />
                 </motion.div>
@@ -130,16 +131,16 @@ export const Navbar = () => {
               </Link>
 
               {/* Desktop Navigation */}
-              <div className="hidden lg:flex items-center gap-1">
+              <div className="hidden lg:flex items-center gap-2">
                 {navLinks.map((item) => (
                   <motion.button
                     key={item.name}
                     onClick={() => handleNavClick(item)}
                     className={cn(
-                      "px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300",
+                      "px-5 py-2.5 rounded-2xl text-sm font-medium transition-all duration-400 ease-out",
                       isActive(item)
-                        ? "text-primary bg-gradient-to-r from-primary/15 to-accent/10"
-                        : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                        ? "text-primary shadow-neu-inset bg-gradient-to-br from-primary/10 to-accent/5"
+                        : "text-muted-foreground hover:text-foreground hover:shadow-neu-sm hover:bg-gradient-to-br hover:from-card hover:to-secondary/20 active:shadow-neu-inset-sm"
                     )}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
@@ -159,7 +160,7 @@ export const Navbar = () => {
 
               {/* Mobile Menu Button */}
               <motion.button
-                className="lg:hidden p-2 rounded-xl shadow-neu-sm bg-gradient-to-br from-card to-primary/5"
+                className="lg:hidden p-2.5 rounded-2xl shadow-neu bg-gradient-to-br from-card to-secondary/20 active:shadow-neu-inset"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 whileTap={{ scale: 0.95 }}
               >
@@ -179,13 +180,16 @@ export const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
           >
-            <div className="absolute inset-0 bg-background/80 backdrop-blur-md" onClick={() => setIsMobileMenuOpen(false)} />
+            <div 
+              className="absolute inset-0 bg-background/80 backdrop-blur-md" 
+              onClick={() => setIsMobileMenuOpen(false)} 
+            />
             <motion.div
-              className="absolute top-24 left-4 right-4 bg-gradient-to-br from-card to-primary/5 rounded-3xl shadow-neu-lg p-6"
+              className="absolute top-24 left-4 right-4 rounded-3xl shadow-neu-2xl p-6 bg-gradient-to-br from-card to-secondary/20"
               initial={{ opacity: 0, y: -20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.95 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
             >
               <div className="flex flex-col gap-2">
                 {navLinks.map((item, index) => (
@@ -198,10 +202,10 @@ export const Navbar = () => {
                     <button
                       onClick={() => handleNavClick(item)}
                       className={cn(
-                        "block w-full text-left px-4 py-3 rounded-xl text-lg font-medium transition-all",
+                        "block w-full text-left px-5 py-3.5 rounded-2xl text-base font-medium transition-all duration-300",
                         isActive(item)
-                          ? "text-primary bg-gradient-to-r from-primary/15 to-accent/10"
-                          : "text-foreground hover:bg-primary/10"
+                          ? "text-primary shadow-neu-inset bg-gradient-to-br from-primary/10 to-accent/5"
+                          : "text-foreground hover:shadow-neu-sm hover:bg-gradient-to-br hover:from-card hover:to-secondary/30 active:shadow-neu-inset-sm"
                       )}
                     >
                       {item.name}

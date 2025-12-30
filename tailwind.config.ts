@@ -76,10 +76,12 @@ export default {
         'neu-sm': 'var(--neu-shadow-sm)',
         'neu-lg': 'var(--neu-shadow-lg)',
         'neu-xl': 'var(--neu-shadow-xl)',
+        'neu-2xl': 'var(--neu-shadow-2xl)',
         'neu-inset': 'var(--neu-shadow-inset)',
         'neu-inset-sm': 'var(--neu-shadow-inset-sm)',
-        'glow': '0 0 40px hsl(var(--primary) / 0.3)',
-        'glow-lg': '0 0 60px hsl(var(--primary) / 0.4)',
+        'neu-inset-lg': 'var(--neu-shadow-inset-lg)',
+        'glow-purple': 'var(--glow-purple)',
+        'glow-purple-lg': 'var(--glow-purple-lg)',
       },
       keyframes: {
         "accordion-down": {

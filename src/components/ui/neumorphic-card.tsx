@@ -20,16 +20,17 @@ export const NeumorphicCard = ({
   return (
     <motion.div
       className={cn(
-        "rounded-3xl bg-card p-6 transition-all duration-300",
-        pressed ? "shadow-neu-inset" : "shadow-neu",
-        hover && "hover:shadow-neu-lg",
+        "rounded-3xl p-6 transition-all duration-400 ease-out",
+        pressed 
+          ? "shadow-neu-inset bg-background" 
+          : "shadow-neu-lg bg-gradient-to-br from-card to-secondary/20",
+        hover && !pressed && "hover:shadow-neu-xl hover:-translate-y-1",
         className
       )}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
-      whileHover={hover ? { y: -5, transition: { duration: 0.3 } } : undefined}
     >
       {children}
     </motion.div>

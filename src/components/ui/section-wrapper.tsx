@@ -6,19 +6,37 @@ interface SectionWrapperProps {
   children: ReactNode;
   className?: string;
   id?: string;
+  variant?: "default" | "raised" | "purple";
 }
 
-export const SectionWrapper = ({ children, className, id }: SectionWrapperProps) => {
+export const SectionWrapper = ({ 
+  children, 
+  className, 
+  id,
+  variant = "default" 
+}: SectionWrapperProps) => {
+  const variants = {
+    default: "",
+    raised: "rounded-[3rem] shadow-neu-lg bg-gradient-to-br from-card to-secondary/10 p-8 md:p-12 mx-4 md:mx-8",
+    purple: "bg-section-purple rounded-[3rem] p-8 md:p-12 mx-4 md:mx-8",
+  };
+
   return (
     <motion.section
       id={id}
-      className={cn("md:py-16 px-4 md:px-8 relative overflow-hidden", className)}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      className={cn(
+        "py-16 md:py-24 relative overflow-hidden",
+        variants[variant],
+        className
+      )}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
-      {children}
+      <div className="container mx-auto px-4">
+        {children}
+      </div>
     </motion.section>
   );
 };

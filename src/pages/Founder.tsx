@@ -17,7 +17,7 @@ const milestones = [
 const Founder = () => {
   return (
     <section id="founder" className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
+      <div className="absolute inset-0 bg-section-purple" />
 
       <SectionWrapper className="relative z-10">
         <div className="container mx-auto">
@@ -28,7 +28,7 @@ const Founder = () => {
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <AnimatedText className="text-primary text-sm font-medium uppercase tracking-wider mb-4">
                 Meet the Founder
@@ -87,11 +87,11 @@ const Founder = () => {
               </NeumorphicCard>
 
               {/* Milestones */}
-              <div className="grid grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
                 {milestones.map((milestone, index) => (
                   <motion.div
                     key={milestone.year}
-                    className="p-4 rounded-xl bg-gradient-to-br from-primary/10 to-card shadow-neu-sm"
+                    className="p-4 rounded-2xl shadow-neu bg-gradient-to-br from-card to-secondary/20 transition-all duration-400 hover:shadow-neu-lg hover:-translate-y-1"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -114,10 +114,10 @@ const Founder = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <div className="relative w-full max-w-lg mx-auto lg:mx-0">
-                <div className="w-full aspect-square rounded-full bg-gradient-to-br from-card to-primary/20 shadow-neu overflow-hidden">
+                <div className="w-full aspect-square rounded-full shadow-neu-2xl bg-gradient-to-br from-card to-secondary/30 overflow-hidden">
                   <img
                     src="/vidya.png"
                     alt="Vidya Wankhade"

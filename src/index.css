@@ -4,17 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Neumorphic Design System for The Consistent Academy - Enhanced Purple Theme */
+/* ═══════════════════════════════════════════════════════════
+   🎨 NEUMORPHIC DESIGN SYSTEM - The Consistent Academy
+   Soft UI with realistic depth, tactile surfaces & purple accents
+   ═══════════════════════════════════════════════════════════ */
 
 @layer base {
   :root {
-    --background: 250 30% 97%;
+    /* ─────────────────────────────────────────────────────
+       COLOR PALETTE - Light purplish whites & neutrals
+       ───────────────────────────────────────────────────── */
+    --background: 250 30% 96%;
     --foreground: 262 30% 15%;
 
-    --card: 250 30% 98%;
+    --card: 250 25% 97%;
     --card-foreground: 262 30% 15%;
 
-    --popover: 250 30% 98%;
+    --popover: 250 25% 97%;
     --popover-foreground: 262 30% 15%;
 
     --primary: 262 83% 58%;
@@ -22,10 +28,10 @@
     --primary-light: 262 83% 75%;
     --primary-dark: 262 83% 45%;
 
-    --secondary: 262 30% 94%;
+    --secondary: 262 20% 92%;
     --secondary-foreground: 262 30% 20%;
 
-    --muted: 262 20% 92%;
+    --muted: 262 18% 90%;
     --muted-foreground: 262 15% 45%;
 
     --accent: 280 70% 65%;
@@ -34,39 +40,90 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 262 25% 88%;
-    --input: 262 25% 94%;
+    --border: 262 20% 86%;
+    --input: 250 20% 94%;
     --ring: 262 83% 58%;
 
-    --radius: 1rem;
+    --radius: 1.25rem;
 
-    /* Neumorphic Shadows with purple tint */
-    --shadow-light: 262 30% 100%;
-    --shadow-dark: 262 30% 85%;
+    /* ─────────────────────────────────────────────────────
+       NEUMORPHIC SHADOW SYSTEM - Dual light/dark
+       ───────────────────────────────────────────────────── */
     
-    /* Neumorphic shadow values */
-    --neu-shadow-sm: 4px 4px 8px hsl(262 30% 85% / 0.5), -4px -4px 8px hsl(0 0% 100% / 0.8);
-    --neu-shadow: 8px 8px 16px hsl(262 30% 85% / 0.5), -8px -8px 16px hsl(0 0% 100% / 0.8);
-    --neu-shadow-lg: 12px 12px 24px hsl(262 30% 85% / 0.5), -12px -12px 24px hsl(0 0% 100% / 0.8);
-    --neu-shadow-xl: 20px 20px 40px hsl(262 30% 85% / 0.5), -20px -20px 40px hsl(0 0% 100% / 0.8);
-    --neu-shadow-inset: inset 4px 4px 8px hsl(262 30% 85% / 0.5), inset -4px -4px 8px hsl(0 0% 100% / 0.8);
-    --neu-shadow-inset-sm: inset 2px 2px 4px hsl(262 30% 85% / 0.5), inset -2px -2px 4px hsl(0 0% 100% / 0.8);
+    /* Base shadow colors - neutral grays for realism */
+    --shadow-light: 0 0% 100%;
+    --shadow-dark: 0 0% 82%;
+    
+    /* Raised Neumorphic Shadows */
+    --neu-shadow-sm: 
+      6px 6px 12px hsl(0 0% 82% / 0.4), 
+      -6px -6px 12px hsl(0 0% 100% / 0.9);
+    
+    --neu-shadow: 
+      10px 10px 20px hsl(0 0% 82% / 0.45), 
+      -10px -10px 20px hsl(0 0% 100% / 0.9);
+    
+    --neu-shadow-lg: 
+      15px 15px 30px hsl(0 0% 82% / 0.5), 
+      -15px -15px 30px hsl(0 0% 100% / 0.95);
+    
+    --neu-shadow-xl: 
+      20px 20px 60px hsl(0 0% 80% / 0.5), 
+      -20px -20px 60px hsl(0 0% 100% / 1);
+    
+    --neu-shadow-2xl: 
+      30px 30px 80px hsl(0 0% 78% / 0.55), 
+      -30px -30px 80px hsl(0 0% 100% / 1);
 
-    /* Enhanced Gradients */
+    /* Inset (Pressed) Neumorphic Shadows */
+    --neu-shadow-inset-sm: 
+      inset 4px 4px 8px hsl(0 0% 82% / 0.4), 
+      inset -4px -4px 8px hsl(0 0% 100% / 0.7);
+    
+    --neu-shadow-inset: 
+      inset 8px 8px 16px hsl(0 0% 82% / 0.45), 
+      inset -8px -8px 16px hsl(0 0% 100% / 0.75);
+    
+    --neu-shadow-inset-lg: 
+      inset 12px 12px 24px hsl(0 0% 82% / 0.5), 
+      inset -12px -12px 24px hsl(0 0% 100% / 0.8);
+
+    /* Purple-tinted glow for focus states */
+    --glow-purple: 0 0 30px hsl(262 83% 58% / 0.4);
+    --glow-purple-lg: 0 0 50px hsl(262 83% 58% / 0.5);
+    
+    /* ─────────────────────────────────────────────────────
+       NEUMORPHIC GRADIENTS - Soft depth perception
+       ───────────────────────────────────────────────────── */
+    
+    /* Raised surface gradients */
+    --gradient-neu-raised: linear-gradient(145deg, hsl(250 25% 99%), hsl(250 25% 94%));
+    --gradient-neu-raised-reverse: linear-gradient(145deg, hsl(250 25% 94%), hsl(250 25% 99%));
+    
+    /* Subtle purple-tinted backgrounds */
+    --gradient-purple-soft: linear-gradient(145deg, hsl(262 40% 98%), hsl(262 30% 96%));
+    --gradient-purple-card: linear-gradient(145deg, hsl(250 30% 98%), hsl(262 25% 95%));
+    
+    /* Purple accent gradients */
     --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%), hsl(280 70% 60%));
-    --gradient-soft: linear-gradient(135deg, hsl(262 30% 98%), hsl(262 30% 95%));
-    --gradient-purple-glow: radial-gradient(circle at center, hsl(262 83% 75% / 0.4), transparent 70%);
-    --gradient-blob: linear-gradient(135deg, hsl(262 83% 70% / 0.2), hsl(280 70% 65% / 0.15));
-    --gradient-purple-section: linear-gradient(180deg, hsl(262 83% 58% / 0.08), hsl(280 70% 65% / 0.05), transparent);
-    --gradient-accent-section: linear-gradient(180deg, hsl(280 70% 65% / 0.1), hsl(262 83% 58% / 0.05));
+    --gradient-primary-soft: linear-gradient(135deg, hsl(262 60% 92%), hsl(280 50% 90%));
+    
+    /* Atmospheric glows */
+    --gradient-purple-glow: radial-gradient(circle at center, hsl(262 83% 75% / 0.15), transparent 70%);
+    --gradient-accent-glow: radial-gradient(ellipse at 50% 50%, hsl(280 70% 65% / 0.12), transparent 65%);
+    
+    /* Section backgrounds */
+    --gradient-section-soft: linear-gradient(180deg, hsl(262 40% 98% / 0.5), transparent);
+    --gradient-section-purple: linear-gradient(180deg, hsl(262 83% 58% / 0.06), hsl(280 70% 65% / 0.03), transparent);
 
-    --sidebar-background: 262 30% 98%;
+    /* Sidebar variables */
+    --sidebar-background: 250 25% 97%;
     --sidebar-foreground: 262 30% 20%;
     --sidebar-primary: 262 83% 58%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 262 30% 94%;
+    --sidebar-accent: 262 20% 92%;
     --sidebar-accent-foreground: 262 30% 20%;
-    --sidebar-border: 262 25% 88%;
+    --sidebar-border: 262 20% 86%;
     --sidebar-ring: 262 83% 58%;
   }
 }
@@ -83,30 +140,131 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
+    /* Subtle purple-tinted background for entire page */
+    background: linear-gradient(180deg, hsl(250 30% 96%), hsl(260 25% 97%));
   }
 }
 
 @layer utilities {
-  /* Neumorphic utility classes */
-  .neu-flat {
+  /* ═══════════════════════════════════════════════════════════
+     🔷 NEUMORPHIC UTILITY CLASSES - Core Depth System
+     ═══════════════════════════════════════════════════════════ */
+
+  /* ─────────────────────────────────────────────────────
+     RAISED SURFACES - Default elevated state
+     ───────────────────────────────────────────────────── */
+  .neu-raised {
+    background: var(--gradient-neu-raised);
     box-shadow: var(--neu-shadow);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .neu-raised-sm {
+    background: var(--gradient-neu-raised);
+    box-shadow: var(--neu-shadow-sm);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .neu-raised-lg {
+    background: var(--gradient-neu-raised);
+    box-shadow: var(--neu-shadow-lg);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .neu-raised-xl {
+    background: var(--gradient-neu-raised);
+    box-shadow: var(--neu-shadow-xl);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .neu-raised-2xl {
+    background: var(--gradient-neu-raised);
+    box-shadow: var(--neu-shadow-2xl);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Reverse gradient variation */
+  .neu-raised-reverse {
+    background: var(--gradient-neu-raised-reverse);
+    box-shadow: var(--neu-shadow);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ─────────────────────────────────────────────────────
+     PRESSED/INSET SURFACES - Active/Input state
+     ───────────────────────────────────────────────────── */
   .neu-pressed {
+    background: hsl(var(--background));
     box-shadow: var(--neu-shadow-inset);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .neu-convex {
+  .neu-pressed-sm {
+    background: hsl(var(--background));
+    box-shadow: var(--neu-shadow-inset-sm);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .neu-pressed-lg {
+    background: hsl(var(--background));
+    box-shadow: var(--neu-shadow-inset-lg);
+    transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ─────────────────────────────────────────────────────
+     FLAT SURFACE - Minimal depth
+     ───────────────────────────────────────────────────── */
+  .neu-flat {
+    background: hsl(var(--card));
+    box-shadow: var(--neu-shadow-sm);
+  }
+
+  /* ─────────────────────────────────────────────────────
+     INTERACTIVE STATES - Hover, Active, Focus
+     ───────────────────────────────────────────────────── */
+  
+  /* Hover - Elevate slightly */
+  .neu-hover-lift:hover {
+    box-shadow: var(--neu-shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .neu-hover-glow:hover {
+    box-shadow: 
+      var(--neu-shadow-lg),
+      var(--glow-purple);
+  }
+
+  /* Active/Click - Inset */
+  .neu-active-press:active {
+    box-shadow: var(--neu-shadow-inset);
+    transform: translateY(0);
+  }
+
+  /* Focus - Purple glow */
+  .neu-focus-glow:focus-visible {
+    outline: none;
+    box-shadow: 
+      var(--neu-shadow),
+      var(--glow-purple-lg);
+  }
+
+  /* ─────────────────────────────────────────────────────
+     PURPLE-INTEGRATED NEUMORPHIC SURFACES
+     ───────────────────────────────────────────────────── */
+  .neu-purple-soft {
+    background: var(--gradient-purple-soft);
     box-shadow: var(--neu-shadow);
-    background: linear-gradient(145deg, hsl(262 30% 100%), hsl(262 30% 93%));
   }
 
-  .neu-concave {
-    box-shadow: var(--neu-shadow-inset);
-    background: linear-gradient(145deg, hsl(262 30% 93%), hsl(262 30% 100%));
+  .neu-purple-card {
+    background: var(--gradient-purple-card);
+    box-shadow: var(--neu-shadow-lg);
   }
 
-  /* Shadow utilities */
+  /* ─────────────────────────────────────────────────────
+     STANDALONE SHADOW UTILITIES
+     ───────────────────────────────────────────────────── */
   .shadow-neu {
     box-shadow: var(--neu-shadow);
   }
@@ -123,36 +281,112 @@
     box-shadow: var(--neu-shadow-xl);
   }
 
-  .shadow-glow {
-    box-shadow: 0 0 30px hsl(262 83% 58% / 0.3);
+  .shadow-neu-2xl {
+    box-shadow: var(--neu-shadow-2xl);
   }
 
+  .shadow-neu-inset {
+    box-shadow: var(--neu-shadow-inset);
+  }
+
+  .shadow-neu-inset-sm {
+    box-shadow: var(--neu-shadow-inset-sm);
+  }
+
+  .shadow-neu-inset-lg {
+    box-shadow: var(--neu-shadow-inset-lg);
+  }
+
+  .shadow-glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+
+  .shadow-glow-purple-lg {
+    box-shadow: var(--glow-purple-lg);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     🎨 GRADIENTS & BACKGROUNDS
+     ═══════════════════════════════════════════════════════════ */
+  
+  .bg-neu-gradient {
+    background: var(--gradient-neu-raised);
+  }
+
+  .bg-purple-glow {
+    background: var(--gradient-purple-glow);
+  }
+
+  .bg-accent-glow {
+    background: var(--gradient-accent-glow);
+  }
+
+  .bg-section-soft {
+    background: var(--gradient-section-soft);
+  }
+
+  .bg-section-purple {
+    background: var(--gradient-section-purple);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     ✨ TEXT & SPECIAL EFFECTS
+     ═══════════════════════════════════════════════════════════ */
+  
   /* Text gradients */
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-primary);
   }
 
-  /* Floating animation */
+  .text-gradient-soft {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary-soft);
+  }
+
+  /* ═══════════════════════════════════════════════════════════
+     🌊 ANIMATIONS & MOTION
+     ═══════════════════════════════════════════════════════════ */
+  
   @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(2deg); }
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-20px) rotate(2deg); 
+    }
   }
 
   @keyframes float-slow {
-    0%, 100% { transform: translateY(0px) translateX(0px); }
-    33% { transform: translateY(-15px) translateX(10px); }
-    66% { transform: translateY(-5px) translateX(-10px); }
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px); 
+    }
+    33% { 
+      transform: translateY(-15px) translateX(10px); 
+    }
+    66% { 
+      transform: translateY(-5px) translateX(-10px); 
+    }
   }
 
   @keyframes pulse-glow {
-    0%, 100% { opacity: 0.5; transform: scale(1); }
-    50% { opacity: 0.8; transform: scale(1.05); }
+    0%, 100% { 
+      opacity: 0.4; 
+      transform: scale(1); 
+    }
+    50% { 
+      opacity: 0.7; 
+      transform: scale(1.05); 
+    }
   }
 
   @keyframes blob {
-    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    0%, 100% { 
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; 
+    }
+    50% { 
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; 
+    }
   }
 
   .animate-float {
@@ -171,18 +405,18 @@
     animation: blob 10s ease-in-out infinite;
   }
 
-  /* Glassmorphism for overlays with purple tint */
+  /* ═══════════════════════════════════════════════════════════
+     🪟 GLASSMORPHISM - For overlays
+     ═══════════════════════════════════════════════════════════ */
   .glass {
     @apply backdrop-blur-md;
-    background: hsl(262 30% 98% / 0.85);
+    background: hsl(250 25% 97% / 0.8);
+    box-shadow: var(--neu-shadow-sm);
   }
 
-  /* Purple accent backgrounds */
-  .bg-purple-glow {
-    background: radial-gradient(ellipse at 50% 50%, hsl(262 83% 58% / 0.15), transparent 70%);
-  }
-
-  .bg-accent-glow {
-    background: radial-gradient(ellipse at 50% 50%, hsl(280 70% 65% / 0.15), transparent 70%);
+  .glass-strong {
+    @apply backdrop-blur-lg;
+    background: hsl(250 25% 97% / 0.9);
+    box-shadow: var(--neu-shadow);
   }
 }

@@ -22,15 +22,16 @@ export const FloatingBlob = ({
   };
 
   const colors = {
-    primary: "bg-primary/10",
-    accent: "bg-accent/10",
+    primary: "bg-gradient-to-br from-primary/12 to-primary/8",
+    accent: "bg-gradient-to-br from-accent/12 to-accent/8",
     mixed: "bg-gradient-to-br from-primary/15 to-accent/10",
   };
 
   return (
     <motion.div
       className={cn(
-        "absolute rounded-full blur-3xl animate-blob pointer-events-none",
+        "absolute rounded-full blur-3xl pointer-events-none",
+        "animate-float-slow animate-pulse-glow",
         sizes[size],
         colors[color],
         className
