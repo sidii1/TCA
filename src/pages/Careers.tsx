@@ -8,9 +8,6 @@ import { SectionWrapper } from "@/components/ui/section-wrapper";
 import { NeumorphicButton } from "@/components/ui/neumorphic-button";
 import { NeumorphicCard } from "@/components/ui/neumorphic-card";
 import { AnimatedHeading, AnimatedText } from "@/components/ui/animated-text";
-import { number } from "framer-motion";
-import { motion } from "framer-motion";
-
 
 /* ---------------- TYPES ---------------- */
 
@@ -20,6 +17,7 @@ type CareerFormData = {
   contact: string;
   role: string;
   experience: string;
+  resumeLink: string;
   message: string;
 };
 
@@ -32,6 +30,7 @@ const Careers = () => {
     contact: "",
     role: "",
     experience: "",
+    resumeLink: "",
     message: "",
   });
 
@@ -66,6 +65,7 @@ const Careers = () => {
         contact: "",
         role: "",
         experience: "",
+        resumeLink: "",
         message: "",
       });
     } catch (error) {
@@ -82,7 +82,6 @@ const Careers = () => {
 
       {/* HERO */}
       <SectionWrapper className="pt-24 pb-12">
-
         <div className="text-center max-w-3xl mx-auto">
           <AnimatedText className="text-primary uppercase text-sm mb-3">
             Careers
@@ -92,68 +91,48 @@ const Careers = () => {
             Join <span className="text-gradient">The Consistent Academy</span>
           </AnimatedHeading>
 
-         <AnimatedText className="text-muted-foreground text-lg mt-4">
-
-
+          <AnimatedText className="text-muted-foreground text-lg mt-4">
             We’re always looking for passionate educators and mentors who believe
             in consistent growth and meaningful learning.
           </AnimatedText>
         </div>
       </SectionWrapper>
 
-      
-      {/* ROLES SLIDESHOW */}
+      {/* ROLES */}
+      <SectionWrapper className="py-14">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <AnimatedHeading className="text-center mb-8">
+            Open <span className="text-gradient">Positions</span>
+          </AnimatedHeading>
 
-<SectionWrapper className="py-14">
-
-  <div className="max-w-7xl mx-auto px-6 lg:px-12">
-
-    <AnimatedHeading className="text-center mb-8">
-
-      Open <span className="text-gradient">Positions</span>
-    </AnimatedHeading>
-
-    <div className="
-      grid 
-      grid-cols-1 
-      sm:grid-cols-2 
-      md:grid-cols-3 
-      lg:grid-cols-5 
-      gap-6
-    ">
-      {[
-        "IELTS Trainer",
-        "Spoken English Mentor",
-        "Teaching Assistant",
-        "Writing Skills Coach",
-        "Corporate Communication Trainer",
-      ].map((role) => (
-        <NeumorphicCard
-          key={role}
-          className="text-center p-5"
-        >
-          <Briefcase className="mx-auto text-primary mb-3" />
-          <h3 className="font-semibold text-base">{role}</h3>
-          <p className="text-muted-foreground text-sm mt-2">
-            Part-time / Full-time
-          </p>
-        </NeumorphicCard>
-      ))}
-    </div>
-
-  </div>
-</SectionWrapper>
-
-
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {[
+              "IELTS Trainer",
+              "Spoken English Mentor",
+              "Teaching Assistant",
+              "Writing Skills Coach",
+              "Corporate Communication Trainer",
+            ].map((role) => (
+              <NeumorphicCard key={role} className="text-center p-5">
+                <Briefcase className="mx-auto text-primary mb-3" />
+                <h3 className="font-semibold text-base">{role}</h3>
+                <p className="text-muted-foreground text-sm mt-2">
+                  Part-time / Full-time
+                </p>
+              </NeumorphicCard>
+            ))}
+          </div>
+        </div>
+      </SectionWrapper>
 
       {/* FORM */}
       <SectionWrapper className="py-16">
-
         <div className="max-w-3xl mx-auto">
           <NeumorphicCard className="p-10">
             <div className="text-center mb-8">
-              <AnimatedHeading className="text-primary">Apply Now</AnimatedHeading>
+              <AnimatedHeading className="text-primary">
+                Apply Now
+              </AnimatedHeading>
               <AnimatedText className="text-muted-foreground mt-3">
                 Your application will be securely stored and reviewed by our
                 team.
@@ -202,7 +181,7 @@ const Careers = () => {
                 </div>
               </div>
 
-              {/* Contact No */}
+              {/* Contact */}
               <div>
                 <label className="block text-sm font-medium mb-1">
                   Contact Number
@@ -249,10 +228,33 @@ const Careers = () => {
                 <input
                   type="text"
                   name="experience"
+                  required
                   value={form.experience}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl bg-background shadow-neu-sm focus:outline-none"
                 />
+              </div>
+
+              {/* Resume Link */}
+              <div>
+                <label className="block text-sm font-medium mb-1">
+                  Resume Link(make sure the link is accessible)
+                </label>
+                <div className="relative">
+                  <Briefcase className="absolute left-3 top-3 text-muted-foreground" size={18} />
+                  <input
+                    type="url"
+                    name="resumeLink"
+                    required
+                    placeholder="https://drive.google.com/..."
+                    value={form.resumeLink}
+                    onChange={handleChange}
+                    className="w-full pl-10 pr-4 py-3 rounded-xl bg-background shadow-neu-sm focus:outline-none"
+                  />
+                </div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  Upload your resume to Google Drive and paste the link here
+                </p>
               </div>
 
               {/* Message */}
@@ -263,6 +265,7 @@ const Careers = () => {
                 <textarea
                   name="message"
                   rows={4}
+                  required
                   value={form.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl bg-background shadow-neu-sm focus:outline-none"
