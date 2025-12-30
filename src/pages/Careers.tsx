@@ -8,6 +8,7 @@ import { SectionWrapper } from "@/components/ui/section-wrapper";
 import { NeumorphicButton } from "@/components/ui/neumorphic-button";
 import { NeumorphicCard } from "@/components/ui/neumorphic-card";
 import { AnimatedHeading, AnimatedText } from "@/components/ui/animated-text";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 /* ---------------- TYPES ---------------- */
 
@@ -20,6 +21,88 @@ type CareerFormData = {
   resumeLink: string;
   message: string;
 };
+
+type RoleDetails = {
+  title: string;
+  description: string;
+  responsibilities: string[];
+  requirements: string[];
+};
+
+/* ---------------- DATA ---------------- */
+
+const roleDetails: RoleDetails[] = [
+  {
+    title: "IELTS Trainer",
+    description: "Help students achieve their desired IELTS band scores through comprehensive training in all four modules.",
+    responsibilities: [
+      "Conduct IELTS preparation sessions for Listening, Reading, Writing, and Speaking",
+      "Provide personalized feedback and improvement strategies",
+      "Design and evaluate practice tests"
+    ],
+    requirements: [
+      "IELTS Band 8+ or equivalent certification",
+      "2+ years of teaching experience",
+      "Strong communication skills"
+    ]
+  },
+  {
+    title: "Spoken English Mentor",
+    description: "Guide students to improve their conversational English skills and build confidence in communication.",
+    responsibilities: [
+      "Facilitate interactive speaking sessions",
+      "Focus on pronunciation, fluency, and vocabulary building",
+      "Create engaging conversational activities"
+    ],
+    requirements: [
+      "Excellent English proficiency",
+      "Experience in teaching spoken English",
+      "Patient and encouraging teaching style"
+    ]
+  },
+  {
+    title: "Teaching Assistant",
+    description: "Support our trainers in delivering high-quality education and managing classroom activities.",
+    responsibilities: [
+      "Assist trainers during sessions",
+      "Help with student assessments and grading",
+      "Manage learning materials and resources"
+    ],
+    requirements: [
+      "Graduate in any field",
+      "Good communication skills",
+      "Willingness to learn and grow"
+    ]
+  },
+  {
+    title: "Writing Skills Coach",
+    description: "Empower students to express themselves effectively through enhanced writing abilities.",
+    responsibilities: [
+      "Teach essay writing, letter writing, and creative writing",
+      "Review and provide detailed feedback on written work",
+      "Develop writing curriculum and exercises"
+    ],
+    requirements: [
+      "Strong writing and editing skills",
+      "Experience in teaching writing",
+      "Attention to detail"
+    ]
+  },
+  {
+    title: "Corporate Communication Trainer",
+    description: "Train professionals in effective workplace communication, presentations, and business English.",
+    responsibilities: [
+      "Conduct corporate training sessions",
+      "Focus on email writing, presentations, and meetings",
+      "Customize training based on corporate needs"
+    ],
+    requirements: [
+      "Corporate training experience",
+      "Understanding of business communication",
+      "Professional demeanor"
+    ]
+  }
+];
 
 /* ---------------- PAGE ---------------- */
 
@@ -81,70 +164,127 @@ const Careers = () => {
       <Navbar />
 
       {/* HERO */}
-      <SectionWrapper className="pt-24 pb-12">
+      <div className="pt-28 pb-2">
         <div className="text-center max-w-3xl mx-auto">
-          <AnimatedText className="text-primary uppercase text-sm mb-3">
-            Careers
-          </AnimatedText>
-
           <AnimatedHeading>
-            Join <span className="text-gradient">The Consistent Academy</span>
+            Join The <span className="text-gradient">Consistent</span> Academy
           </AnimatedHeading>
 
           <AnimatedText className="text-muted-foreground text-lg mt-4">
-            We’re always looking for passionate educators and mentors who believe
+            We're always looking for passionate educators and mentors who believe
             in consistent growth and meaningful learning.
           </AnimatedText>
         </div>
-      </SectionWrapper>
+      </div>
 
       {/* ROLES */}
-      <SectionWrapper className="py-14">
+      <div className="py-6">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <AnimatedHeading className="text-center mb-8">
-            Open <span className="text-gradient">Positions</span>
-          </AnimatedHeading>
+          <TooltipProvider delayDuration={100}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {roleDetails.map((role) => (
+                <Tooltip key={role.title}>
+                  <TooltipTrigger asChild>
+                    <div>
+                      <NeumorphicCard 
+                        className="text-center p-4 cursor-pointer transition-all duration-300 ease-out hover:scale-105"
+                        onClick={() => {
+                          setForm(prev => ({ ...prev, role: role.title }));
+                          setTimeout(() => {
+                            document.querySelector('form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                          }, 100);
+                        }}
+                      >
+                        <div className="flex flex-col items-center justify-center gap-1.5">
+                          <Briefcase className="text-primary transition-all duration-300" size={20} />
+                          <h3 className="font-semibold text-sm">{role.title}</h3>
+                        </div>
+                        
+                        <p className="text-muted-foreground text-xs mt-2">
+                          Part-time / Full-time
+                        </p>
+                      </NeumorphicCard>
+                    </div>
+                  </TooltipTrigger>
+                  
+                  <TooltipContent 
+                    side="bottom" 
+                    className="max-w-md p-4 bg-popover border border-border shadow-xl z-[100]"
+                    sideOffset={10}
+                  >
+                    <div className="space-y-3">
+                      {/* Header */}
+                      <div className="pb-2 border-b border-border/50">
+                        <div className="flex items-center gap-2 mb-1">
+                          <Briefcase className="text-primary" size={18} />
+                          <h3 className="text-sm font-bold text-gradient">{role.title}</h3>
+                        </div>
+                        <p className="text-xs text-muted-foreground">Part-time / Full-time</p>
+                      </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {[
-              "IELTS Trainer",
-              "Spoken English Mentor",
-              "Teaching Assistant",
-              "Writing Skills Coach",
-              "Corporate Communication Trainer",
-            ].map((role) => (
-              <NeumorphicCard key={role} className="text-center p-5">
-                <Briefcase className="mx-auto text-primary mb-3" />
-                <h3 className="font-semibold text-base">{role}</h3>
-                <p className="text-muted-foreground text-sm mt-2">
-                  Part-time / Full-time
-                </p>
-              </NeumorphicCard>
-            ))}
-          </div>
+                      {/* Description */}
+                      <p className="text-xs leading-relaxed font-semibold">{role.description}</p>
+
+                      {/* Responsibilities */}
+                      <div className="space-y-1.5">
+                        <h4 className="font-semibold text-primary text-xs flex items-center gap-1.5">
+                          <span className="w-0.5 h-3 bg-primary rounded-full"></span>
+                          Key Responsibilities
+                        </h4>
+                        <ul className="space-y-1 pl-2">
+                          {role.responsibilities.map((item, idx) => (
+                            <li key={idx} className="text-xs font-semibold flex items-start gap-1.5">
+                              <span className="text-primary mt-0.5 text-[10px]">•</span>
+                              <span className="flex-1">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Requirements */}
+                      <div className="space-y-1.5">
+                        <h4 className="font-semibold text-primary text-xs flex items-center gap-1.5">
+                          <span className="w-0.5 h-3 bg-primary rounded-full"></span>
+                          Requirements
+                        </h4>
+                        <ul className="space-y-1 pl-2">
+                          {role.requirements.map((item, idx) => (
+                            <li key={idx} className="text-xs font-semibold flex items-start gap-1.5">
+                              <span className="text-primary mt-0.5 text-[10px]">•</span>
+                              <span className="flex-1">{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </TooltipContent>
+                </Tooltip>
+              ))}
+            </div>
+          </TooltipProvider>
         </div>
-      </SectionWrapper>
+      </div>
 
       {/* FORM */}
-      <SectionWrapper className="py-16">
+      <div className="py-6">
         <div className="max-w-3xl mx-auto">
-          <NeumorphicCard className="p-10">
-            <div className="text-center mb-8">
+          <NeumorphicCard className="p-8">
+            <div className="text-center mb-6">
               <AnimatedHeading className="text-primary">
                 Apply Now
               </AnimatedHeading>
-              <AnimatedText className="text-muted-foreground mt-3">
+              <AnimatedText className="text-muted-foreground mt-2">
                 Your application will be securely stored and reviewed by our
                 team.
               </AnimatedText>
 
-              <p className="mt-4 text-sm text-primary flex justify-center items-center gap-2">
+              <p className="mt-3 text-sm text-primary flex justify-center items-center gap-2">
                 <Mail size={16} />
                 theconsistentacademy@gmail.com
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name */}
               <div>
                 <label className="block text-sm font-medium mb-1">
@@ -273,7 +413,7 @@ const Careers = () => {
               </div>
 
               {/* Submit */}
-              <div className="pt-4 text-center">
+              <div className="pt-2 text-center">
                 <NeumorphicButton type="submit" size="lg" disabled={loading}>
                   {loading ? "Submitting..." : "Submit Application"}
                   <ArrowRight size={18} />
@@ -282,7 +422,7 @@ const Careers = () => {
             </form>
           </NeumorphicCard>
         </div>
-      </SectionWrapper>
+      </div>
 
       <Footer />
     </div>

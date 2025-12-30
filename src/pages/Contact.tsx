@@ -102,7 +102,7 @@ const Contact = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-10 overflow-hidden">
+      <section className="relative pt-32 overflow-hidden">
         <FloatingBlob className="top-20 -right-32" size="xl" color="primary" />
         <FloatingBlob
           className="bottom-0 -left-20"
@@ -115,30 +115,20 @@ const Contact = () => {
           <div className="max-w-3xl mx-auto text-center">
 
             <motion.h1
-              className="text-4xl md:text-6xl font-bold mb-6"
+              className="text-4xl md:text-6xl font-bold"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <span className="text-foreground">Let's Start Your </span>
-              <span className="text-gradient">Journey</span>
+              <span className="text-foreground">Get In </span>
+              <span className="text-gradient">Touch</span>
             </motion.h1>
-
-            <motion.p
-              className="text-xl text-muted-foreground"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              Have questions or ready to enroll? Reach out to us and we'll help
-              you take the first step towards English fluency.
-            </motion.p>
           </div>
         </div>
       </section>
 
       {/* Contact Form & Info */}
-      <SectionWrapper className="pt-0">
+      <SectionWrapper className="pt-0 -mt-16">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Form */}
@@ -192,10 +182,13 @@ const Contact = () => {
                       className="w-full px-4 py-3 rounded-xl bg-background shadow-neu-inset-sm"
                     >
                       <option value="">Select a course</option>
-                      <option value="IELTS">IELTS Preparation</option>
+                      <option value="IELTS Preparation">IELTS Preparation</option>
                       <option value="Spoken English">Spoken English</option>
+                      <option value="Writing Skills">Writing Skills</option>
+                      <option value="Grammar Mastery">Grammar Mastery</option>
                       <option value="Business English">Business English</option>
-                      <option value="Interview Prep">Interview Preparation</option>
+                      <option value="Interview Preparation">Interview Preparation</option>
+                      <option value="IELTS Writing">IELTS Writing</option>
                     </select>
                   </div>
 

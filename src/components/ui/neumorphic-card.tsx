@@ -8,6 +8,7 @@ interface NeumorphicCardProps {
   hover?: boolean;
   pressed?: boolean;
   delay?: number;
+  onClick?: () => void;
 }
 
 export const NeumorphicCard = ({
@@ -16,6 +17,7 @@ export const NeumorphicCard = ({
   hover = true,
   pressed = false,
   delay = 0,
+  onClick,
 }: NeumorphicCardProps) => {
   return (
     <motion.div
@@ -27,6 +29,7 @@ export const NeumorphicCard = ({
         hover && !pressed && "hover:shadow-neu-xl hover:-translate-y-1",
         className
       )}
+      onClick={onClick}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}

@@ -20,7 +20,7 @@ export const Footer = () => {
   const footerLinks = {
     pages: [
       { name: "Home", onClick: () => scrollToSection("home") },
-      { name: "About Us", onClick: () => scrollToSection("about") },
+      { name: "Careers", path: "/careers" },
       { name: "Courses", path: "/courses" },
       { name: "Testimonials", onClick: () => scrollToSection("testimonials") },
     ],
