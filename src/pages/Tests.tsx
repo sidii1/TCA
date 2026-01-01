@@ -24,17 +24,9 @@ const Tests = () => {
         <Navbar />
         <div className="pt-24 pb-12">
           <div className="container mx-auto px-4">
-            <motion.button
-              onClick={handleBackToSelection}
-              className="mb-4 flex items-center gap-2 px-4 py-2 rounded-xl shadow-neu hover:shadow-neu-lg transition-all text-muted-foreground hover:text-foreground"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <ArrowLeft size={20} />
-              Back to Test Selection
-            </motion.button>
             <TestInterface
               testData={selectedTest === "kids" ? kidsTestData : adultsTestData}
+              onBackToSelection={handleBackToSelection}
             />
           </div>
         </div>
