@@ -47,11 +47,11 @@ const Tests = () => {
       <div className="min-h-screen bg-gradient-to-br from-background via-secondary/20 to-background">
         <Navbar />
 
-        <main className="pt-32 pb-20">
+        <main className="pt-28 pb-20">
           <div className="container mx-auto px-4">
             {/* Header */}
             <motion.div
-              className="text-center mb-16"
+              className="text-center mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
@@ -74,13 +74,14 @@ const Tests = () => {
               >
                 <NeumorphicCard className="h-full">
                   <div className="p-8">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-6 shadow-neu">
-                      <BookOpen className="w-8 h-8 text-primary" />
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-neu flex-shrink-0">
+                        <BookOpen className="w-7 h-7 text-primary" />
+                      </div>
+                      <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+                        Kids Grammar Test
+                      </h2>
                     </div>
-                    
-                    <h2 className="text-3xl font-bold mb-4 text-foreground">
-                      Kids Grammar Test
-                    </h2>
                     
                     <p className="text-muted-foreground mb-6">
                       Designed for young learners aged 5-17 years
@@ -124,13 +125,14 @@ const Tests = () => {
               >
                 <NeumorphicCard className="h-full">
                   <div className="p-8">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center mb-6 shadow-neu">
-                      <GraduationCap className="w-8 h-8 text-accent" />
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center shadow-neu flex-shrink-0">
+                        <GraduationCap className="w-7 h-7 text-accent" />
+                      </div>
+                      <h2 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
+                        Advanced<br />Grammar Test
+                      </h2>
                     </div>
-                    
-                    <h2 className="text-3xl font-bold mb-4 text-foreground">
-                      Advanced Grammar Test
-                    </h2>
                     
                     <p className="text-muted-foreground mb-6">
                       For adults and advanced learners

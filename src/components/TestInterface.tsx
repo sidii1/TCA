@@ -93,7 +93,7 @@ const TestInterface = ({ testData }: TestInterfaceProps) => {
         transition={{ duration: 0.5 }}
       >
         <NeumorphicCard className="max-w-4xl mx-auto">
-          <div className="p-6 md:p-8 text-center">
+          <div className="p-6 md:p-4 text-center">
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
