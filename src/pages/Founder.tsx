@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Quote, Award } from "lucide-react";
+import { Quote, Award, BookOpen, ExternalLink } from "lucide-react";
 import { AnimatedText, AnimatedHeading } from "@/components/ui/animated-text";
 import { NeumorphicCard } from "@/components/ui/neumorphic-card";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
@@ -11,6 +11,41 @@ const milestones = [
   { year: "2022", achievements: ["Published 'Cakewalk IELTS'"] },
   { year: "2024", achievements: ["Head of Department (Academics)", "Published 'Reading Detectives'"] },
   { year: "2025", achievements: ["Founded The Consistent Academy", "Published '101 Management Books You'll Never Read But Should'"] },
+];
+
+const books = [
+  {
+    title: "Cakewalk IELTS",
+    description:
+      "A focused, student-friendly guide that simplifies IELTS preparation with practical strategies, clarity, and confidence-building techniques.",
+    links: [
+      { label: "Evincepub", url: "https://evincepub.com/product/a-focal-easy-guide-cakewalk-ielts/" },
+      { label: "Bspkart", url: "https://www.bspkart.com/product/a-focal-easy-guide-cakewalk-ielts/" },
+      { label: "Amazon", url: "https://www.amazon.in/Focal-Easy-Guide-Cakewalk-IELTS/dp/9354468594/ref" },
+      { label: "Flipkart", url: "https://www.flipkart.com/focal-easy-guide-cakewalk-ielts/p/itme05662a461566" },
+    ],
+  },
+  {
+    title: "The Reading Detective",
+    description:
+      "A delightful book for kids that builds comprehension, critical thinking, and a love for reading through engaging stories and activities.",
+    links: [
+      { label: "Evincepub", url: "https://evincepub.com/product/the-reading-detective-solving-comprehension-mysteries-for-kids/" },
+      { label: "Amazon", url: "https://www.amazon.in/dp/9363559335" },
+      { label: "Flipkart", url: "https://www.flipkart.com/the-reading-detective/p/itm59cbee5b6ff6a" },
+      { label: "Instamojo (eBook)", url: "https://evincepub.myinstamojo.com/product/the-reading-detective/" },
+    ],
+  },
+  {
+    title: "101 Management Books You’ll Never Read But Should",
+    description:
+      "A crisp, insightful compilation that distills powerful management lessons from the world’s most influential business books.",
+    links: [
+      { label: "Evincepub", url: "https://evincepub.com/product/101-management-books-youll-never-read-but-should/" },
+      { label: "Amazon", url: "https://www.amazon.in/dp/9373352318" },
+      { label: "Flipkart", url: "https://www.flipkart.com/101-management-books-youll-never-read-but-should/p/itm6bc57a7fd9b2c" },
+    ],
+  },
 ];
 
 const Founder = () => {
@@ -166,6 +201,40 @@ const Founder = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* ================= BOOKS SECTION ================= */}
+          <div className="mt-24">
+            <AnimatedHeading className="text-center mb-12">
+              Books by <span className="text-gradient">Vidya Wankhade</span>
+            </AnimatedHeading>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {books.map((book, i) => (
+                <NeumorphicCard key={i} className="p-6">
+                  <BookOpen className="text-primary mb-4" />
+                  <h3 className="text-lg font-semibold mb-3">{book.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {book.description}
+                  </p>
+
+                  <div className="space-y-2">
+                    {book.links.map((link, j) => (
+                      <a
+                        key={j}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between text-sm text-primary hover:underline"
+                      >
+                        {link.label}
+                        <ExternalLink size={14} />
+                      </a>
+                    ))}
+                  </div>
+                </NeumorphicCard>
+              ))}
+            </div>
+          </div>
         </div>
       </SectionWrapper>
     </section>
