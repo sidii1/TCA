@@ -35,11 +35,11 @@ const TestInterface = ({
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async () => {
-    console.log("🟢 SUBMIT");
-    console.log("userId:", userId);
-    console.log("testType:", testType);
+  const [score, setScore] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [percentage, setPercentage] = useState(0);
 
+  const handleSubmit = async () => {
     if (!userId || !testType) {
       alert("Missing user or test type");
       return;
@@ -47,27 +47,31 @@ const TestInterface = ({
 
     setSubmitting(true);
 
-    let score = 0;
-    let total = 0;
+    let _score = 0;
+    let _total = 0;
 
     testData.sections.forEach((section) =>
       section.questions.forEach((q) => {
-        total++;
-        if (answers[q.id] === q.correctAnswer) score++;
+        _total++;
+        if (answers[q.id] === q.correctAnswer) _score++;
       })
     );
 
+    const _percentage = Math.round((_score / _total) * 100);
+
     try {
-      const ref = await addDoc(collection(db, "testResults"), {
+      await addDoc(collection(db, "testResults"), {
         userId,
         testType,
-        score,
-        total,
-        percentage: Math.round((score / total) * 100),
+        score: _score,
+        total: _total,
+        percentage: _percentage,
         createdAt: serverTimestamp(),
       });
 
-      console.log("✅ SAVED:", ref.id);
+      setScore(_score);
+      setTotal(_total);
+      setPercentage(_percentage);
       setSubmitted(true);
     } catch (e) {
       console.error("❌ FIRESTORE ERROR:", e);
@@ -77,16 +81,57 @@ const TestInterface = ({
     }
   };
 
+  /* ---------------- AI ANALYSIS (RULE-BASED) ---------------- */
+
+  const getAnalysis = () => {
+    if (percentage >= 85)
+      return "Excellent grammar skills. You show strong command and accuracy.";
+    if (percentage >= 65)
+      return "Good performance. Some minor improvements are needed.";
+    if (percentage >= 40)
+      return "Average understanding. Practice grammar rules and sentence structure.";
+    return "Needs improvement. Focus on basics and practice regularly.";
+  };
+
+  /* ---------------- SUBMITTED SCREEN ---------------- */
+
   if (submitted) {
     return (
-      <div className="text-center space-y-4">
+      <div className="space-y-6 text-center">
         <h2 className="text-3xl font-bold">Test Submitted 🎉</h2>
-        <NeumorphicButton onClick={onBack}>
-          Back to Tests
-        </NeumorphicButton>
+
+        <NeumorphicCard>
+          <div className="p-6 space-y-3">
+            <p className="text-xl font-semibold">
+              Score: {score} / {total}
+            </p>
+            <p className="text-lg">Percentage: {percentage}%</p>
+
+            <div className="mt-4">
+              <h3 className="font-semibold text-lg">AI Analysis</h3>
+              <p className="text-muted-foreground">{getAnalysis()}</p>
+            </div>
+          </div>
+        </NeumorphicCard>
+
+        <div className="flex gap-4 justify-center">
+          <NeumorphicButton onClick={onBack}>
+            Back to Tests
+          </NeumorphicButton>
+          <NeumorphicButton
+            onClick={() => {
+              setAnswers({});
+              setSubmitted(false);
+            }}
+          >
+            Retake Test
+          </NeumorphicButton>
+        </div>
       </div>
     );
   }
+
+  /* ---------------- TEST UI ---------------- */
 
   return (
     <div className="space-y-6">
@@ -111,8 +156,8 @@ const TestInterface = ({
                       onChange={() =>
                         setAnswers({ ...answers, [q.id]: letter })
                       }
-                    />
-                    {" "}{opt}
+                    />{" "}
+                    {opt}
                   </label>
                 );
               })}
@@ -121,10 +166,7 @@ const TestInterface = ({
         </div>
       ))}
 
-      <NeumorphicButton
-        onClick={handleSubmit}
-        disabled={submitting}
-      >
+      <NeumorphicButton onClick={handleSubmit} disabled={submitting}>
         {submitting ? "Submitting..." : "Submit Test"}
       </NeumorphicButton>
     </div>
@@ -189,9 +231,7 @@ const Tests = () => {
             <NeumorphicButton onClick={handleAuth}>
               {isRegister ? "Register" : "Login"}
             </NeumorphicButton>
-            <button
-              onClick={() => setIsRegister(!isRegister)}
-            >
+            <button onClick={() => setIsRegister(!isRegister)}>
               Switch to {isRegister ? "Login" : "Register"}
             </button>
           </div>
