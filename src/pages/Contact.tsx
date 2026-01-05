@@ -5,7 +5,6 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 import { NeumorphicButton } from "@/components/ui/neumorphic-button";
 import { NeumorphicCard } from "@/components/ui/neumorphic-card";
-import { FloatingBlob } from "@/components/ui/floating-blob";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 import { AnimatedHeading, AnimatedText } from "@/components/ui/animated-text";
 import { Navbar } from "@/components/layout/Navbar";
@@ -103,13 +102,6 @@ const Contact = () => {
 
       {/* Hero Section */}
       <section className="relative pt-32 overflow-hidden">
-        <FloatingBlob className="top-20 -right-32" size="xl" color="primary" />
-        <FloatingBlob
-          className="bottom-0 -left-20"
-          size="lg"
-          color="accent"
-          delay={0.5}
-        />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">

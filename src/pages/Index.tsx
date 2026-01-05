@@ -15,7 +15,6 @@ import FlowingMenu from "@/components/ui/flowing-menu";
 import CircularGallery from '@/components/ui/circular-gallery';
 import { NeumorphicButton } from "@/components/ui/neumorphic-button";
 import { NeumorphicCard } from "@/components/ui/neumorphic-card";
-import { FloatingBlob } from "@/components/ui/floating-blob";
 import { SectionWrapper } from "@/components/ui/section-wrapper";
 import { AnimatedHeading, AnimatedText } from "@/components/ui/animated-text";
 import { Navbar } from "@/components/layout/Navbar";
@@ -90,9 +89,6 @@ const Index = () => {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <FloatingBlob className="top-20 -left-32" size="xl" color="primary" />
-        <FloatingBlob className="top-40 right-0" size="lg" color="accent" />
-
         <div className="container mx-auto text-center">
           <motion.h1 className="text-6xl md:text-8xl font-bold mb-6">
             The <span className="text-gradient">Consistent</span><br />Academy
