@@ -621,7 +621,7 @@ const Courses = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 overflow-hidden">
+      <section className="relative pt-28 overflow-hidden">
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
