@@ -23,13 +23,7 @@ export const Footer = () => {
       { name: "Careers", path: "/careers" },
       { name: "Courses", path: "/courses" },
       { name: "Testimonials", onClick: () => scrollToSection("testimonials") },
-    ],
-    courses: [
-      { name: "IELTS Preparation", path: "/courses" },
-      { name: "Spoken English", path: "/courses" },
-      { name: "Writing Skills", path: "/courses" },
-      { name: "Grammar Mastery", path: "/courses" },
-    ],
+    ]
   };
 
   return (
@@ -113,28 +107,7 @@ export const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Courses */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h4 className="font-semibold text-foreground mb-6">Our Courses</h4>
-            <ul className="space-y-3">
-              {footerLinks.courses.map((link, index) => (
-                <li key={index}>
-                  <Link
-                    to={link.path}
-                    className="text-muted-foreground hover:text-primary transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-
+         
           {/* Contact */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
