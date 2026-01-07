@@ -59,18 +59,18 @@ const courseImages = [
 ];
 
 const courses = [
-  { title: "IELTS | TOEFL | PTE | CELPIP Preparation Course", description: "Comprehensive training for all four modules with real proficiency focus, not just exam tricks", icon: "📚" },
-  { title: "Corporate Survival & Success Program", description: "Transform into a corporate-ready professional with essential workplace skills and business etiquette.", icon: "🎯" },
-  { title: "Crack Your Interview – First Attempt", description: "Transform from nervous fresher to confident, clear, and convincing interviewee", icon: "✍️" },
-  { title: "Corporate Dining & Social Etiquette Masterclass", description: "Master professional dining and social etiquette for corporate success", icon: "📖" },
-  { title: "Advanced English & Leadership Presence for Managers", description: "Build executive presence, clarity, and leadership communication credibility", icon: "💼" },
-  { title: "Communication Skill Training", description: "Clear, confident, and professional communication in interviews, meetings, and public speaking", icon: "🎤" },
-  { title: "Personality Development Training", description: "Build a confident personality, strong body language, professional etiquette, and leadership skills", icon: "📝" },
-  { title:"Elocution Course for Kids", description: "Enhance kids' English speaking skills, confidence, and clarity through fun and interactive sessions", icon: "🗣️" },
-  { title:"Public Speaking course for Kids", description: "Help kids overcome stage fright and become confident public speakers with engaging activities", icon: "🌟" },
-  { title:"Grammar Foundations for Kids", description: "Build strong grammar skills in kids through interactive lessons and practical exercises", icon: "📚" },
-  { title:"Creative Writing for Kids", description: "Develop kids' creativity and writing skills through engaging and imaginative exercises", icon: "✍️" },
-  { title: "Reading Club for Kids", description: "Foster a love for reading in children through interactive stories and discussions", icon: "📖" }
+  { title: "IELTS | TOEFL | PTE | CELPIP ", icon: "📚" },
+  { title: "Corporate Survival & Success Program", icon: "🎯" },
+  { title: "Crack Your Interview", icon: "✍️" },
+  { title: "Dining & Social Etiquette", icon: "📖" },
+  { title: "Advanced English & Leadership for Managers",  icon: "💼" },
+  { title: "Communication Skill Training", icon: "🎤" },
+  { title: "Personality Development Training",icon: "📝" },
+  { title:"Elocution Course for Kids",  icon: "🗣️" },
+  { title:"Public Speaking course for Kids", icon: "🌟" },
+  { title:"Grammar Foundations for Kids", icon: "📚" },
+  { title:"Creative Writing for Kids",  icon: "✍️" },
+  { title: "Reading Club for Kids", icon: "📖" }
 ];
 
 const courseMenuItems = courses.map((course, i) => ({

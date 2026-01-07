@@ -94,14 +94,15 @@ onTestComplete={async ({ attempted, correct, wrong }) => {
   });
 
   try {
-    const docRef = await addDoc(collection(db, "test_results"), {
-      email: user.email,
-      testType: selectedTest,
-      attemptedAt: serverTimestamp(),
-      attempted,
-      correct,
-      wrong,
-    });
+    const docRef = await addDoc(collection(db, "testResults"), {
+  userId: user.uid,
+  testType: selectedTest,
+  score: correct,
+  total: attempted,
+  percentage: Math.round((correct / attempted) * 100),
+  createdAt: serverTimestamp(),
+});
+
 
     console.log("✅ Firestore write success, doc ID:", docRef.id);
   } catch (err) {
