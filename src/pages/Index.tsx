@@ -22,6 +22,7 @@ import { Footer } from "@/components/layout/Footer";
 
 import Founder from "./Founder";
 import Testimonials from "./Testimonials";
+import { title } from "process";
 
 /* ---------------- DATA ---------------- */
 
@@ -65,6 +66,11 @@ const courses = [
   { title: "Advanced English & Leadership Presence for Managers", description: "Build executive presence, clarity, and leadership communication credibility", icon: "💼" },
   { title: "Communication Skill Training", description: "Clear, confident, and professional communication in interviews, meetings, and public speaking", icon: "🎤" },
   { title: "Personality Development Training", description: "Build a confident personality, strong body language, professional etiquette, and leadership skills", icon: "📝" },
+  { title:"Elocution Course for Kids", description: "Enhance kids' English speaking skills, confidence, and clarity through fun and interactive sessions", icon: "🗣️" },
+  { title:"Public Speaking course for Kids", description: "Help kids overcome stage fright and become confident public speakers with engaging activities", icon: "🌟" },
+  { title:"Grammar Foundations for Kids", description: "Build strong grammar skills in kids through interactive lessons and practical exercises", icon: "📚" },
+  { title:"Creative Writing for Kids", description: "Develop kids' creativity and writing skills through engaging and imaginative exercises", icon: "✍️" },
+  { title: "Reading Club for Kids", description: "Foster a love for reading in children through interactive stories and discussions", icon: "📖" }
 ];
 
 const courseMenuItems = courses.map((course, i) => ({
