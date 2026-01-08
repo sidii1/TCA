@@ -29,7 +29,7 @@ import Testimonials from "../components/Testimonials";
 
 const stats = [
   { icon: Users, value: "1500+", label: "Students Trained", color: "#FF6B8B" },
-  { icon: BookOpen, value: "9+", label: "Expert Courses", color: "#4ECDC4" },
+  { icon: BookOpen, value: "10+", label: "Expert Courses", color: "#4ECDC4" },
   { icon: Trophy, value: "95%", label: "Success Rate", color: "#FFD166" },
   { icon: Star, value: "4.9", label: "Student Rating", color: "#7B68EE" },
 ];
