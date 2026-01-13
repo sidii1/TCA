@@ -556,6 +556,82 @@ const courses: Course[] = [
         ]
       }
     ]
+  },
+  {
+    title:"Train the Trainer Course",
+    subtitle: "IELTS | Spoken English | ESL / TESOL / TEFL Trainer Certification",
+    description: "Equip yourself with the skills to become an effective trainer and facilitator.",
+    targetAudience: "Aspiring trainers, educators, and professionals looking to enhance their training skills.",
+    image: "",
+    hours: "15 Hours",
+    price:"15000/-",
+    modules: 8,
+    moduleDetails: [
+      {
+        title: "Module 1: Training Fundamentals",
+        topics: [
+          "Understanding adult learning",
+          "Training methodologies",
+          "Learning objectives"
+        ]
+      },
+      {
+        title: "Module 2: Curriculum Design",
+        topics: [
+          "Course structure planning",
+          "Content development",
+          "Assessment strategies"
+        ]
+      },
+      {
+        title: "Module 3: Facilitation Skills",
+        topics: [
+          "Interactive teaching techniques",
+          "Group dynamics management",
+          "Effective questioning"
+        ]
+      },
+      {
+        title: "Module 4: Presentation & Delivery",
+        topics: [
+          "Engaging presentations",
+          "Visual aids usage",
+          "Confidence building"
+        ]
+      },
+      {
+        title: "Module 5: Feedback & Evaluation",
+        topics: [
+          "Providing constructive feedback",
+          "Evaluating training effectiveness",
+          "Continuous improvement"
+        ]
+      },
+      {
+        title: "Module 6: Coaching & Mentoring",
+        topics: [
+          "Coaching techniques for trainers",
+          "Mentoring strategies for learners",
+          "Supportive learning environment"
+        ]
+      },
+      {
+        title: "Module 7: Technology Integration in Training",
+        topics: [
+          "Digital tools for training delivery",
+          "Online learning platforms usage",
+          "Blended learning approaches"
+        ]
+      },
+      {
+        title: "Module 8: Advanced Trainer Competencies",
+        topics: [
+          "Leadership in training environments",
+          "Innovation in training design and delivery methods.",
+          ""
+        ]
+      }
+    ]
   }
 ];
 
