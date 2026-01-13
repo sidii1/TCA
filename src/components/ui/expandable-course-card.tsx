@@ -20,6 +20,7 @@ export interface Course {
   description: string;
   image: string;
   hours: string;
+  price: string;
   modules: number;
   targetAudience: string;
   promise?: string;
@@ -156,12 +157,19 @@ export default function ExpandableCourseCard({ courses }: ExpandableCourseCardPr
                       </div>
                     </div>
                     
-                    <motion.h2
-                      layoutId={`title-${active.title}-${id}`}
-                      className="text-3xl md:text-4xl font-bold text-white mb-2 leading-tight"
-                    >
-                      {active.title}
-                    </motion.h2>
+                    <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
+  <motion.h2
+    layoutId={`title-${active.title}-${id}`}
+    className="text-3xl md:text-4xl font-bold text-white leading-tight"
+  >
+    {active.title}
+  </motion.h2>
+
+  <div className="px-4 py-2 rounded-full bg-primary text-white text-sm font-semibold">
+    ₹ {active.price}
+  </div>
+</div>
+
                     {active.subtitle && (
                       <p className="text-lg text-white/90 font-medium">
                         {active.subtitle}
@@ -378,12 +386,19 @@ export default function ExpandableCourseCard({ courses }: ExpandableCourseCardPr
               {/* Content */}
               <div className="p-6 flex-1 flex flex-col">
                 <div className="mb-4 flex-1">
-                  <motion.h3
-                    layoutId={`title-${course.title}-${id}`}
-                    className="text-xl font-semibold text-foreground mb-3 line-clamp-2 group-hover:text-primary transition-colors"
-                  >
-                    {course.title}
-                  </motion.h3>
+                 <div className="flex items-start justify-between gap-3 mb-3">
+  <motion.h3
+    layoutId={`title-${course.title}-${id}`}
+    className="text-xl font-semibold text-foreground line-clamp-2 group-hover:text-primary transition-colors"
+  >
+    {course.title}
+  </motion.h3>
+
+  <span className="text-sm font-semibold text-primary whitespace-nowrap">
+    ₹ {course.price}
+  </span>
+</div>
+
                   <p className="text-sm text-foreground/80 line-clamp-3 mb-4">
                     {course.description}
                   </p>

@@ -16,6 +16,7 @@ const courses: Course[] = [
     description: "Comprehensive training for all four modules with real proficiency focus, not just exam tricks.",
     image: "/courses/img1.png",
     hours: "20 Hours",
+    price:"12000/-",
     modules: 4,
     targetAudience: "Students & professionals aiming for international study, migration, work, or permanent residency.",
     promise: "To build real English proficiency and test confidence, not just exam tricks.",
@@ -91,6 +92,7 @@ const courses: Course[] = [
     description: "Transform into a corporate-ready professional with essential workplace skills and business etiquette.",
     image: "/courses/img2.png",
     hours: "12 Hours",
+    price:"6000/-",
     modules: 6,
     targetAudience: "Freshers, graduate trainees, management trainees, first-job professionals (0–2 years experience).",
     promise: "Participants will think, speak, behave, and perform like corporate-ready professionals.",
@@ -157,6 +159,7 @@ const courses: Course[] = [
     description: "Transform from nervous fresher to confident, clear, and convincing interviewee.",
     image: "/courses/img3.png",
     hours: "6 Hours",
+    price:"3000/-",
     modules: 6,
     targetAudience: "Final-year students, fresh graduates, job seekers (0–1 year).",
     promise: "To transform nervous freshers into confident, clear, and convincing interviewees.",
@@ -223,6 +226,7 @@ const courses: Course[] = [
     description: "Master professional dining and social etiquette for corporate success.",
     image: "/courses/img4.png",
     hours: "6 Hours",
+    price:"3000/-",
     modules: 6,
     targetAudience: "Freshers, management trainees, graduate hires, young professionals (0–3 years). Separate batches for boys and girls.",
     moduleDetails: [
@@ -283,6 +287,7 @@ const courses: Course[] = [
     description: "Build executive presence, clarity, and leadership communication credibility.",
     image: "/courses/img5.png",
     hours: "12 Hours",
+    price:"6000/-",
     modules: 12,
     targetAudience: "Mid-level managers, team leads, first-time managers, senior executives.",
     promise: "To build executive presence, clarity, and leadership communication credibility.",
@@ -402,6 +407,7 @@ const courses: Course[] = [
     description: "Clear, confident, and professional communication in interviews, meetings, and public speaking.",
     image: "/courses/img6.png",
     hours: "20 Hours",
+    price:"5000/-",
     modules: 8,
     targetAudience: "Students, freshers, and early-career professionals.",
     promise: "Master clear, confident, and professional communication for all scenarios.",
@@ -476,7 +482,8 @@ const courses: Course[] = [
     title: "Personality Development Training",
     description: "Build a confident personality, strong body language, professional etiquette, and leadership skills.",
     image: "/courses/img7.png",
-    hours: "20 Hours",
+    hours: "12 Hours",
+    price:"6000/-",
     modules: 8,
     targetAudience: "Students, freshers, and early-career professionals.",
     promise: "Develop a complete professional personality with confidence and leadership qualities.",
@@ -554,6 +561,7 @@ const kidsCourses = [
     title: "Elocution Course",
     description: "Helps children speak clearly, confidently, and expressively.",
     duration: "4 Weeks",
+    price:"3000/-",
     image: "/courses/img8.png",
     features: [
       "Clarity in speech & pronunciation",
@@ -567,6 +575,7 @@ const kidsCourses = [
     title: "Public Speaking",
     description: "Builds confidence and stage presence in young learners.",
     duration: "4 Weeks",
+    price:"3000/-",
     image: "/courses/img9.png",
     features: [
       "Reduced stage fear",
@@ -581,6 +590,7 @@ const kidsCourses = [
     title: "Grammar Foundations",
     description: "Strong grammar basics for clear and correct communication.",
     duration: "4 Weeks",
+    price:"3000/-",
     image: "/courses/img10.png",
     features: [
       "Sentence construction",
@@ -595,6 +605,7 @@ const kidsCourses = [
     title: "Creative Writing",
     description: "Encourages imagination and expressive writing skills.",
     duration: "4 Weeks",
+    price:"3000/-",
     image: "/courses/img11.png",
     features: [
       "Idea generation & imagination",
@@ -607,7 +618,8 @@ const kidsCourses = [
   {
     title: "Reading Club",
     description: "Develops love for reading and critical thinking.",
-    duration: "Ongoing",
+    duration: "Online",
+    price:"500/per month",
     image: "/courses/img12.png",
     features: [
       "Reading for pleasure",
@@ -688,9 +700,16 @@ const Courses = () => {
             </div>
           )}
           
-          <h3 className="text-xl font-semibold mb-2 text-foreground">
-            {course.title}
-          </h3>
+          <div className="flex items-center justify-between gap-3 mb-2">
+  <h3 className="text-xl font-semibold text-foreground">
+    {course.title}
+  </h3>
+
+  <span className="text-primary font-semibold text-sm whitespace-nowrap">
+    ₹ {course.price}
+  </span>
+</div>
+
 
           <p className="text-sm text-muted-foreground mb-4">
             {course.description}
