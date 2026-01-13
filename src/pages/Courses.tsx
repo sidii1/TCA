@@ -21,11 +21,14 @@ const courses: Course[] = [
     targetAudience: "Students & professionals aiming for international study, migration, work, or permanent residency.",
     promise: "To build real English proficiency and test confidence, not just exam tricks.",
     highlights: [
-      "Study material provided",
-      "Regular practice tasks",
-      "Mock tests",
-      "Writing assessments & feedback",
-      "Speaking evaluations"
+      "Full course (All 4 skills): ₹12,000",
+    "Single skill option (Speaking / Writing / Reading): ₹4,000",
+    "7 hours per individual skill module",
+    "Study material provided",
+    "Regular practice tasks",
+    "Mock tests",
+    "Writing assessments & detailed feedback",
+    "Speaking evaluations"
     ],
     moduleDetails: [
       {
