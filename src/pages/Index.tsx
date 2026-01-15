@@ -82,18 +82,18 @@ const courseImages = [
 ];
 
 const courses = [
-  { title: "IELTS | TOEFL | PTE | CELPIP ", icon: "📚" },
-  { title: "Corporate Survival & Success", icon: "🤵🏻" },
-  { title: "Crack Your Interview", icon: "🕴🏻" },
-  { title: "Dining & Social Etiquette", icon: "🍽️" },
-  { title: "Communication Skill Training", icon: "🎤" },
-  { title: "Personality Development Training",icon: "🗣️" },
-  { title: "Courses for Kids", icon: "👧🏻" }
+  { title: "IELTS | TOEFL | PTE | CELPIP "},
+  { title: "Corporate Survival & Success"},
+  { title: "Crack Your Interview" },
+  { title: "Dining & Social Etiquette"},
+  { title: "Communication Skill Training"},
+  { title: "Personality Development Training"},
+  { title: "Courses for Kids"}
 ];
 
 const courseMenuItems = courses.map((course, i) => ({
   link: "/courses",
-  text: `${course.icon}  ${course.title}  ${course.icon}`,
+  text: `${course.title}`,
   image: courseImages[i % courseImages.length],
 }));
 
