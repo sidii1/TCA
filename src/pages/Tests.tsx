@@ -291,7 +291,7 @@ onTestComplete={async ({ attempted, correct, wrong }) => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.5 }}
-              className="max-w-5xl mx-auto"
+              className="max-w-6xl mx-auto"
             >
               {/* Welcome Header */}
               <div className="text-center mb-7">
