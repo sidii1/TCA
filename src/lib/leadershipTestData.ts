@@ -140,182 +140,212 @@ export const leadershipStyleDescriptions: Record<LeadershipStyle, {
 }> = {
   autocratic: {
     name: "Autocratic Leader",
-    description: "Decisive, control-oriented, efficient in crises. You prefer making decisions independently and maintaining clear authority.",
+    description: "You are a decisive, directive leader who makes independent decisions and expects prompt execution. This style excels in crisis situations, military operations, or when rapid, unambiguous decisions are essential. You value efficiency, clear chains of command, and maintaining control over outcomes. Your approach works best when you possess superior expertise or when circumstances demand immediate action without debate.",
     strengths: [
-      "Quick and decisive in critical situations",
-      "Clear chain of command and expectations",
-      "Efficient in crisis management"
+      "Efficient decision-making in crisis situations and time-sensitive scenarios",
+      "Clear direction and unambiguous authority that eliminates confusion",
+      "Effective in highly structured environments requiring strict compliance",
+      "Provides stability and certainty in chaotic or uncertain conditions"
     ],
     limitations: [
-      "May limit creativity and team engagement",
-      "Can reduce team autonomy and initiative",
-      "Risk of lower morale if overused"
+      "May significantly limit team creativity, innovation, and independent thinking",
+      "Can reduce team autonomy, initiative, and sense of ownership",
+      "Risk of lower morale, disengagement, and higher turnover if overused",
+      "May miss valuable insights from team members with different perspectives"
     ],
     growthSuggestions: [
-      "Practice involving team in non-critical decisions",
-      "Seek input before finalizing strategies"
+      "Practice involving team in non-critical decisions to build engagement",
+      "Seek input before finalizing strategies, even if final decision remains yours",
+      "Develop awareness of when collaboration would enhance outcomes"
     ]
   },
   democratic: {
     name: "Democratic Leader",
-    description: "Inclusive, collaborative, trust-building. You value team input and foster open communication.",
+    description: "You are an inclusive, collaborative leader who genuinely values team input and fosters open communication. This participative approach builds strong buy-in, leverages collective intelligence, and creates psychological safety. You believe the best solutions emerge from diverse perspectives and that team members perform best when they have a voice in decisions that affect them. This style thrives in knowledge work, creative industries, and environments requiring innovation and engagement.",
     strengths: [
-      "High team engagement and morale",
-      "Builds trust and collaboration",
-      "Encourages diverse perspectives"
+      "High team engagement, morale, and commitment to decisions",
+      "Builds deep trust, collaboration, and psychological safety",
+      "Encourages diverse perspectives leading to better solutions",
+      "Develops team members' decision-making capabilities and ownership"
     ],
     limitations: [
-      "Slower decision-making in urgent situations",
-      "May struggle with decisive action when needed",
-      "Can be challenging with large teams"
+      "Slower decision-making process in urgent or time-sensitive situations",
+      "May struggle with decisive action when consensus is elusive",
+      "Can be challenging with very large teams or inexperienced members",
+      "Risk of decision paralysis when opinions are deeply divided"
     ],
     growthSuggestions: [
-      "Develop frameworks for faster consensus",
-      "Learn when to shift to directive style"
+      "Develop frameworks for faster consensus-building when time is limited",
+      "Learn when to shift to directive style in genuine emergencies",
+      "Practice setting clear decision deadlines and fallback mechanisms"
     ]
   },
   laissezFaire: {
     name: "Laissez-Faire Leader",
-    description: "Empowers autonomy, suits expert teams. You trust your team to work independently with minimal supervision.",
+    description: "You are a hands-off leader who empowers team autonomy and trusts professionals to excel independently. This delegation-focused approach works exceptionally well with highly skilled, self-motivated experts who thrive with minimal supervision. You create space for creativity and innovation by removing bureaucratic obstacles and micromanagement. This style is ideal for research teams, creative professionals, or experienced specialists who value independence and have demonstrated competence.",
     strengths: [
-      "Maximizes autonomy and creativity",
-      "Works well with highly skilled teams",
-      "Encourages innovation"
+      "Maximizes autonomy, creativity, and personal accountability",
+      "Works exceptionally well with highly skilled, self-motivated teams",
+      "Encourages innovation and unconventional problem-solving",
+      "Reduces micromanagement and bureaucratic overhead"
     ],
     limitations: [
-      "Risk of lack of direction",
-      "May lead to unclear accountability",
-      "Not suitable for inexperienced teams"
+      "Significant risk of lack of direction and misalignment without structure",
+      "May lead to unclear accountability and coordination challenges",
+      "Not suitable for inexperienced teams or high-risk environments",
+      "Can result in fragmented efforts without regular alignment"
     ],
     growthSuggestions: [
-      "Provide clearer milestones and check-ins",
-      "Balance freedom with accountability"
+      "Provide clearer milestones, check-ins, and alignment mechanisms",
+      "Balance freedom with accountability structures and progress reviews",
+      "Ensure team has resources and clarity even with autonomy"
     ]
   },
   transformational: {
     name: "Transformational Leader",
-    description: "Vision-driven, inspirational, change-oriented. You inspire teams to exceed expectations through shared purpose.",
+    description: "You are a vision-driven, inspirational leader who motivates teams to exceed expectations through shared purpose and meaning. You create compelling narratives about the future, inspire personal growth, and catalyze organizational change. By connecting work to higher purpose and challenging people to develop beyond their perceived limits, you build passionate, committed teams. This style excels during organizational transformations, when launching new initiatives, or when deep cultural change is needed.",
     strengths: [
-      "Inspires high performance and innovation",
-      "Builds strong organizational culture",
-      "Drives meaningful change"
+      "Inspires exceptional performance, innovation, and commitment",
+      "Builds strong, values-driven organizational culture and identity",
+      "Drives meaningful, sustainable change and continuous improvement",
+      "Develops future leaders through mentorship and empowerment"
     ],
     limitations: [
-      "Requires high emotional intelligence",
-      "Needs consistent energy and presence",
-      "May overlook operational details"
+      "Requires high emotional intelligence and exceptional communication skills",
+      "Needs consistent energy, presence, and authenticity to sustain",
+      "May overlook operational details and short-term execution needs",
+      "Can be exhausting to maintain the inspirational intensity required"
     ],
     growthSuggestions: [
-      "Balance inspiration with execution",
-      "Develop systems for sustainable change"
+      "Balance inspiration with execution by partnering with operations-focused leaders",
+      "Develop systems and processes to sustain change beyond personal charisma",
+      "Build rituals that maintain momentum without constant personal intervention"
     ]
   },
   transactional: {
     name: "Transactional Leader",
-    description: "Performance-focused, structured, result-oriented. You manage through clear expectations and accountability.",
+    description: "You are a performance-focused, structured leader who manages through clear expectations, monitoring, and accountability. Your approach emphasizes exchanges: effort for rewards, results for recognition, and consequences for underperformance. You excel at creating predictable, efficient operations where expectations are crystal clear and performance is measured objectively. This style works well in sales environments, manufacturing, or any context where clear metrics drive success.",
     strengths: [
-      "Clear performance standards",
-      "Effective monitoring and feedback",
-      "Results-driven approach"
+      "Establishes clear performance standards and transparent expectations",
+      "Provides effective monitoring, feedback, and accountability systems",
+      "Creates results-driven culture with objective measurement",
+      "Excels at maintaining consistent operational excellence"
     ],
     limitations: [
-      "Limited emotional connection",
-      "May not inspire beyond compliance",
-      "Less focus on development"
+      "Limited emotional connection and intrinsic motivation",
+      "May not inspire performance beyond compliance and basic requirements",
+      "Less focus on long-term development and growth",
+      "Can create transactional relationships rather than commitment"
     ],
     growthSuggestions: [
-      "Incorporate coaching and mentoring",
-      "Balance metrics with people development"
+      "Incorporate coaching, mentoring, and development conversations",
+      "Balance metrics with people development and intrinsic motivation",
+      "Recognize contributions beyond measurable outputs"
     ]
   },
   servant: {
     name: "Servant Leader",
-    description: "People-first, ethical, trust-based. You prioritize serving your team and fostering their growth.",
+    description: "You are a people-first, values-driven leader who prioritizes serving your team and fostering their growth above personal glory. You believe leadership is fundamentally about enabling others to succeed and developing their full potential. By removing obstacles, providing resources, and genuinely caring for team members' well-being, you build exceptional loyalty and trust. This style creates psychologically safe, ethical cultures where people flourish.",
     strengths: [
-      "High trust and loyalty",
-      "Strong ethical foundation",
-      "Develops future leaders"
+      "Builds exceptionally high trust, loyalty, and team cohesion",
+      "Creates strong ethical foundation and values-based culture",
+      "Develops future leaders through genuine investment in growth",
+      "Generates long-term commitment and discretionary effort"
     ],
     limitations: [
-      "May struggle with authority enforcement",
-      "Can be seen as too soft",
-      "Risk of being taken advantage of"
+      "May struggle with authority enforcement and difficult personnel decisions",
+      "Can be perceived as too soft or indecisive in competitive environments",
+      "Risk of being taken advantage of by those who don't share values",
+      "May prioritize individual needs over organizational imperatives"
     ],
     growthSuggestions: [
-      "Set clear boundaries and expectations",
-      "Practice assertiveness when needed"
+      "Set clear boundaries and expectations while maintaining compassion",
+      "Practice assertiveness and tough decisions when organizational needs require",
+      "Balance serving individuals with accountability to mission and results"
     ]
   },
   situational: {
     name: "Situational Leader",
-    description: "Flexible, adaptive, context-driven. You adjust your leadership style based on team needs and situations.",
+    description: "You are a highly adaptive, context-aware leader who flexibly adjusts your approach based on the situation, task, and team member maturity. You recognize that different circumstances demand different leadership responses—directive when teaching new skills, supportive when building confidence, delegating when working with experts. This sophisticated approach requires continuous assessment of readiness levels and the wisdom to match your style to each unique context.",
     strengths: [
-      "Highly adaptable to different contexts",
-      "Matches style to team maturity",
-      "Versatile and responsive"
+      "Highly adaptable to different contexts, tasks, and team dynamics",
+      "Effectively matches leadership style to team member maturity and situation",
+      "Versatile and responsive to changing needs and circumstances",
+      "Maximizes effectiveness by avoiding one-size-fits-all approaches"
     ],
     limitations: [
-      "Requires high awareness and skill",
-      "Can seem inconsistent if not explained",
-      "Demands constant assessment"
+      "Requires exceptionally high awareness, emotional intelligence, and skill",
+      "Can seem inconsistent or unpredictable if transitions aren't explained",
+      "Demands constant assessment and energy to adjust approaches",
+      "Complexity can be overwhelming for leaders new to this style"
     ],
     growthSuggestions: [
-      "Communicate why you adapt your approach",
-      "Develop diagnostic frameworks"
+      "Communicate clearly why you adapt your approach in different situations",
+      "Develop diagnostic frameworks to assess team member readiness systematically",
+      "Practice explaining your leadership choices to build understanding"
     ]
   },
   coaching: {
     name: "Coaching Leader",
-    description: "Development-focused, patient, growth-oriented. You invest in long-term development of team members.",
+    description: "You are a development-focused, patient leader who invests deeply in the long-term growth of team members. Rather than simply directing or managing tasks, you ask powerful questions, provide developmental feedback, and create learning opportunities. You believe people's potential is unlocked through intentional development conversations and practice. This style creates strong individual capabilities, builds learning cultures, and develops the next generation of leaders.",
     strengths: [
-      "Builds strong capabilities",
-      "Creates learning culture",
-      "Long-term team development"
+      "Builds exceptional individual and team capabilities over time",
+      "Creates sustained learning culture and growth mindset",
+      "Provides long-term team development and succession strength",
+      "Increases engagement through personalized development investment"
     ],
     limitations: [
-      "Time-intensive approach",
-      "May be slow for urgent needs",
-      "Requires patience and skill"
+      "Very time-intensive approach requiring significant one-on-one investment",
+      "May be too slow for urgent operational needs or crisis situations",
+      "Requires advanced coaching skills, patience, and emotional intelligence",
+      "Can frustrate task-oriented team members seeking quick answers"
     ],
     growthSuggestions: [
-      "Balance coaching with task completion",
-      "Develop efficient coaching frameworks"
+      "Balance coaching conversations with task completion and deadlines",
+      "Develop efficient coaching frameworks and tools for scalability",
+      "Learn when to shift from coaching to directing in urgent situations"
     ]
   },
   visionary: {
     name: "Visionary Leader",
-    description: "Future-focused, innovative, purpose-driven. You paint compelling pictures of the future and inspire change.",
+    description: "You are a future-focused, innovative leader who paints compelling pictures of what's possible and mobilizes people toward transformative goals. You excel at seeing possibilities others miss, articulating inspiring future states, and giving meaning to change. Your strategic thinking and ability to communicate a compelling 'why' energizes teams to pursue ambitious objectives. This style is essential during major transitions, when entering new markets, or when organizations need directional clarity.",
     strengths: [
-      "Creates compelling direction",
-      "Inspires innovation and change",
-      "Builds sense of purpose"
+      "Creates compelling strategic direction and clarity of purpose",
+      "Inspires innovation, change, and ambitious goal pursuit",
+      "Builds strong sense of meaning and organizational identity",
+      "Excels at strategic thinking and anticipating future trends"
     ],
     limitations: [
-      "Needs strong execution support",
-      "May overlook practical constraints",
-      "Can be too future-focused"
+      "Needs strong execution support to translate vision into reality",
+      "May overlook practical constraints, resources, or implementation details",
+      "Can be overly future-focused at expense of current operations",
+      "Risk of vision-reality gap if execution capabilities don't match ambition"
     ],
     growthSuggestions: [
-      "Partner with detail-oriented leaders",
-      "Connect vision to concrete actions"
+      "Partner with detail-oriented, execution-focused leaders for balance",
+      "Connect inspiring vision to concrete milestones and actionable steps",
+      "Develop appreciation for operational realities and resource constraints"
     ]
   },
   bureaucratic: {
     name: "Bureaucratic Leader",
-    description: "Process-driven, reliable, compliance-focused. You ensure consistency through established procedures.",
+    description: "You are a process-driven, compliance-focused leader who ensures consistency, reliability, and adherence to established procedures. You value rules, regulations, and standardized approaches that create predictability and minimize risk. This style is essential in highly regulated industries (healthcare, finance, government) where compliance is non-negotiable and consistency is critical to quality and safety. You provide clarity and structure in complex environments.",
     strengths: [
-      "High consistency and reliability",
-      "Clear processes and compliance",
-      "Reduces uncertainty"
+      "Ensures high consistency, reliability, and standardization",
+      "Maintains clear processes, documentation, and compliance",
+      "Reduces uncertainty, errors, and regulatory risks",
+      "Creates fair, predictable systems that treat everyone equally"
     ],
     limitations: [
-      "Low flexibility and innovation",
-      "May slow down responses",
-      "Can stifle creativity"
+      "Low flexibility and innovation due to rigid adherence to rules",
+      "May significantly slow down response times and decision-making",
+      "Can stifle creativity, initiative, and adaptive problem-solving",
+      "Risk of prioritizing process adherence over outcomes or customer needs"
     ],
     growthSuggestions: [
-      "Create space for controlled experimentation",
-      "Balance process with flexibility"
+      "Create designated spaces for controlled experimentation and innovation",
+      "Balance necessary process adherence with pragmatic flexibility",
+      "Regularly review and streamline procedures to eliminate unnecessary bureaucracy"
     ]
   }
 };
